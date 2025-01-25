@@ -5,6 +5,17 @@ const SPEED = 300.0
 const ACCEL = 20.0
 const JUMP_VELOCITY = -400.0
 
+var maxHP = 100
+var hp
+
+#variables for referencing nodes
+var HPBar
+
+func _ready():
+	HPBar = get_node("HPBar")
+	hp = maxHP
+	HPBar.max_value = maxHP
+	HPBar.value = hp
 
 func _physics_process(delta: float) -> void:
 	
