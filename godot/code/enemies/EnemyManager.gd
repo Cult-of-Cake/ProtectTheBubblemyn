@@ -4,7 +4,6 @@ class_name EnemyManager
 const enemy_template = preload("res://scenes/game/enemies/enemy_template.tscn")
 @onready var enemySpawner = $enemyTrack/enemySpawn
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$SpawnTimer.start()
