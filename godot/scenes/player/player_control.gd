@@ -53,9 +53,33 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = lerp(velocity, direction * HIGHSPEED, ACCEL * delta)
 	# This moves the character
+	
+	clearSprites()
+	
+	if abs(velocity.x) > abs (velocity.y):
+		if velocity.x > 0: 
+			get_node("Right").visible = true
+		elif velocity.x < 0:
+			get_node("Left").visible = true
+	elif abs(velocity.y) > abs (velocity.x):
+		if velocity.y > 0:
+			get_node("Facing").visible = true
+		elif velocity.y < 0:
+			get_node("Away").visible = true
+	else:
+		get_node("Facing").visible = true
+	
+	
+	
 	move_and_slide()
 	
 	_attack()
+
+func clearSprites():
+	get_node("Facing").visible = false
+	get_node("Left").visible = false
+	get_node("Right").visible = false
+	get_node("Away").visible = false
 
 func _attack():
 	
