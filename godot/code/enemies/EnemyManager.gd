@@ -1,7 +1,8 @@
 extends Node
 class_name EnemyManager
 
-const enemy_template = preload("res://scenes/game/enemies/enemy_template.tscn")
+#const enemy_template = preload("res://scenes/game/enemies/enemy_template.tscn")
+var enemy_template = preload("res://scenes/game/enemies/splugey.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

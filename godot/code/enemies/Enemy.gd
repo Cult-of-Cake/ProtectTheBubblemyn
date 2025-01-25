@@ -19,7 +19,8 @@ func set_goal_point() -> void:
 			var y_variation = randi_range(-magnitude, magnitude)
 			goal_position = global_position + Vector2(x_variation, y_variation)
 			$MovementTimer.wait_time = randf_range(1, 2.5)
-
+		pathOptions.MOVE_TO_PLAYER:
+			goal_position = get_parent().get_parent().get_node("Player").get_node("Player").position
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if path != pathOptions.STAND:
