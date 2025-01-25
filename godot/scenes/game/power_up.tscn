@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://bnjchehacjf"]
+[gd_scene load_steps=4 format=3 uid="uid://bnjchehacjf"]
+
+[ext_resource type="Script" path="res://code/PowerUp.gd" id="1_b5eoj"]
+[ext_resource type="Texture2D" uid="uid://dhouq7bh0e83u" path="res://graphics/icons/icon_maid_hat.png" id="2_sra35"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vt7ci"]
+radius = 37.0
 
 [node name="Power-Up" type="Node2D"]
+
+[node name="MapPower" type="Area2D" parent="."]
+position = Vector2(143, 208)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_b5eoj")
+
+[node name="Sprite2D" type="Sprite2D" parent="MapPower"]
+texture = ExtResource("2_sra35")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapPower"]
+shape = SubResource("CircleShape2D_vt7ci")
+
+[connection signal="body_entered" from="MapPower" to="MapPower" method="on_collect"]

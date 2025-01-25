@@ -1,8 +1,9 @@
 extends CharacterBody2D
+class_name Player
 
 
-const SPEED = 50.0
-const HIGHSPEED = 200.0
+const SPEED = 150.0
+const HIGHSPEED = 450.0
 const ACCEL = 20.0
 const JUMP_VELOCITY = -400.0
 
@@ -24,8 +25,8 @@ func _ready():
 	HPBar.value = hp
 	
 	#this should ultimately all get triggered from somewhere else
-	await get_tree().create_timer(5).timeout
-	activateSpeedup()
+	#await get_tree().create_timer(5).timeout
+	#activateSpeedup()
 
 func _physics_process(delta: float) -> void:
 	
@@ -50,6 +51,13 @@ func _attack():
 		# Add what the attack does here
 		print("attack occured")
 
+#region Power-Ups
+
+func on_powerup_collide(item : PowerUp.Types):
+	match item:
+		PowerUp.Types.SPEEDUP:
+			activateSpeedup()
+
 func activateSpeedup():
 	speedup = true
 	var timeLeft
@@ -63,5 +71,7 @@ func activateSpeedup():
 		speedupTimer = get_tree().create_timer(10)
 	await speedupTimer.timeout
 	speedup = false
+	
+#endregion
 
 	
