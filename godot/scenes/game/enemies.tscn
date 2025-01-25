@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://cimplldinodk3"]
+[gd_scene load_steps=2 format=3 uid="uid://cimplldinodk3"]
+
+[ext_resource type="Script" path="res://code/EnemyManager.gd" id="1_7w7v3"]
 
 [node name="Enemies" type="Node2D"]
+script = ExtResource("1_7w7v3")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="SpawnTimer" to="." method="on_spawn_timer"]
