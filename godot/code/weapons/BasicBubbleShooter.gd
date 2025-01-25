@@ -15,4 +15,5 @@ func _process(delta: float) -> void:
 
 
 func shoot() -> void:
-	pass
+	var bullet = bubble_projectile_template.instantiate()
+	
