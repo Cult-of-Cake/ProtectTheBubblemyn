@@ -1,8 +1,9 @@
 extends CharacterBody2D
+class_name Player
 
 
-const SPEED = 50.0
-const HIGHSPEED = 200.0
+const SPEED = 150.0
+const HIGHSPEED = 450.0
 const ACCEL = 20.0
 const JUMP_VELOCITY = -400.0
 
@@ -38,8 +39,8 @@ func _ready():
 	weapons[1].global_position = Vector2(-50, 0)
 	
 	#this should ultimately all get triggered from somewhere else
-	await get_tree().create_timer(5).timeout
-	activateSpeedup()
+	#await get_tree().create_timer(5).timeout
+	#activateSpeedup()
 
 func _physics_process(delta: float) -> void:
 	
@@ -63,6 +64,15 @@ func _attack():
 		if weapons[0] != null:
 			weapons[0].shoot()
 
+#region Power-Ups
+
+func on_powerup_collide(item : PowerUp.Types):
+	match item:
+		PowerUp.Types.SPEEDUP:
+			activateSpeedup()
+		PowerUp.Types.INVINCIBLE:
+			invincible = true
+
 func activateSpeedup():
 	speedup = true
 	var timeLeft
@@ -76,5 +86,7 @@ func activateSpeedup():
 		speedupTimer = get_tree().create_timer(10)
 	await speedupTimer.timeout
 	speedup = false
+	
+#endregion
 
 	

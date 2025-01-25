@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://bnjchehacjf"]
+[gd_scene load_steps=2 format=3 uid="uid://bnjchehacjf"]
+
+[ext_resource type="PackedScene" uid="uid://chqk0gk5md3mc" path="res://scenes/powers/map_power.tscn" id="1_jdkdi"]
 
 [node name="Power-Up" type="Node2D"]
+
+[node name="Speed" parent="." instance=ExtResource("1_jdkdi")]
+
+[node name="Invincible" parent="." instance=ExtResource("1_jdkdi")]
+position = Vector2(-301, 494)
+type = 1
