@@ -18,7 +18,7 @@ var invincible = false
 
 #weapons
 const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_bubble_shooter.tscn")
-var weapons: Array[BasicBubbleShooter] = [null, null, null, null, null, null]
+var weapons: Array[BasicBubbleShooter] = [null, null, null, null, null, null, null, null]
 
 #variables for referencing nodes
 var HPBar
@@ -37,6 +37,7 @@ func _ready():
 	
 	weapons[1] = basic_bubble_shooter_template.instantiate()
 	add_child(weapons[1])
+	weapons[1].rotation = PI  # half rotation
 	weapons[1].global_position = Vector2(-50, 0)
 	
 	#this should ultimately all get triggered from somewhere else
@@ -86,8 +87,8 @@ func _attack():
 	
 	# Recieves input to attack
 	if Input.is_action_just_pressed("attack"):
-		if weapons[0] != null:
-			weapons[0].shoot()
+		if weapons[1] != null:
+			weapons[1].shoot()
 
 #region Power-Ups
 

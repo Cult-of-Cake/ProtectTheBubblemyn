@@ -18,6 +18,6 @@ func shoot() -> void:
 	var bullet = bubble_projectile_template.instantiate()
 	# bullet origin point is the weapon
 	# TODO - offset of barrel end?
-	bullet.global_position = global_position
+	bullet.global_position = $ProjectileSpawnPosition.global_position
 	# add bullet as child of (weapon -> player -> scene)
 	get_parent().get_parent().add_child(bullet)
