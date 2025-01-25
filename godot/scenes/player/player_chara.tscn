@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbo6lr68ecltq"]
+
+[ext_resource type="Script" path="res://scenes/player/player_control.gd" id="1_43hhl"]
+[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="2_w3smr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xa6j8"]
+radius = 19.0263
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_43hhl")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(0.265625, 0.257813)
+texture = ExtResource("2_w3smr")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xa6j8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="HPBar" type="TextureProgressBar" parent="."]
+offset_left = -22.0
+offset_top = -30.0
+offset_right = 22.0
+offset_bottom = -21.0
+tint_under = Color(0.129558, 0.129558, 0.129558, 1)
+tint_progress = Color(0, 1, 0, 1)
