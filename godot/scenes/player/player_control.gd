@@ -70,6 +70,8 @@ func on_powerup_collide(item : PowerUp.Types):
 	match item:
 		PowerUp.Types.SPEEDUP:
 			activateSpeedup()
+		PowerUp.Types.INVINCIBLE:
+			invincible = true
 
 func activateSpeedup():
 	speedup = true
