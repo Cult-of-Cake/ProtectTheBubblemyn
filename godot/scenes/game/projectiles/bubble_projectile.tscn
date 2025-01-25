@@ -1,21 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvmxit5f6qat3"]
 
-[ext_resource type="Script" path="res://scenes/projectiles/bullet.gd" id="1_rikx6"]
-[ext_resource type="Texture2D" uid="uid://m8bvr036arts" path="res://graphics/icons/icon_bubble.png" id="2_mt7ld"]
+[ext_resource type="Script" path="res://code/projectiles/BubbleProjectile.gd" id="1_eubmv"]
+[ext_resource type="Texture2D" uid="uid://dka01uh6xxmmk" path="res://graphics/icons/icon_bubble.png" id="2_0lwe7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_avl5l"]
 radius = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_srh3l"]
 
-[node name="Bullet" type="CharacterBody2D"]
+[node name="BubbleProjectile" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("1_rikx6")
+script = ExtResource("1_eubmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_mt7ld")
+texture = ExtResource("2_0lwe7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_avl5l")

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
 [ext_resource type="PackedScene" uid="uid://bceb234jm68b" path="res://scenes/game/map.tscn" id="6_50u7o"]
 [ext_resource type="PackedScene" uid="uid://dtrqach0bufxc" path="res://scenes/game/player.tscn" id="7_q486o"]
-[ext_resource type="PackedScene" uid="uid://cimplldinodk3" path="res://scenes/game/enemies.tscn" id="8_ufbwt"]
+[ext_resource type="PackedScene" uid="uid://cimplldinodk3" path="res://scenes/game/enemies/enemies.tscn" id="8_ufbwt"]
 [ext_resource type="PackedScene" uid="uid://bnjchehacjf" path="res://scenes/game/power_up.tscn" id="9_4ty52"]
 [ext_resource type="PackedScene" uid="uid://cto1xlkr5nxxd" path="res://scenes/game/projectiles.tscn" id="10_6n2ns"]
 
