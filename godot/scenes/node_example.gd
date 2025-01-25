@@ -1,6 +1,6 @@
 extends Sprite2D
 
-const basic_bubble_shooter_template = preload("res://scenes/game/basic_bubble_shooter.tscn")
+const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_bubble_shooter.tscn")
 
 func _ready() -> void:
 	var firstWeapon = basic_bubble_shooter_template.instantiate()
