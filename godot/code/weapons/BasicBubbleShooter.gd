@@ -16,4 +16,5 @@ func _process(delta: float) -> void:
 
 func shoot() -> void:
 	var bullet = bubble_projectile_template.instantiate()
-	
+	# add bullet as child of (weapon -> player -> scene)
+	get_parent().get_parent().add_child(bullet)
