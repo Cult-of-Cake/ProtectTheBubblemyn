@@ -3,6 +3,8 @@ class_name Enemy
 
 enum pathOptions { STAND, WANDER, MOVE_TO_PLAYER }
 
+var isEnemy : bool = true
+
 @export var strength : float
 @export var speed : float
 @export var path : pathOptions
@@ -28,3 +30,6 @@ func _process(delta: float) -> void:
 	var direction = global_position.direction_to(goal_position)
 	velocity = direction * speed * 5
 	move_and_slide()
+
+func take_damage(damage: int) -> void:
+	queue_free()
