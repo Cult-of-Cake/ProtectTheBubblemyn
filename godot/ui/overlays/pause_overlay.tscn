@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://jyv4g54adkmo"]
+[gd_scene load_steps=3 format=3 uid="uid://jyv4g54adkmo"]
 
 [ext_resource type="Script" path="res://ui/overlays/pause_overlay.gd" id="1_q2yda"]
+[ext_resource type="PackedScene" uid="uid://cwerlytfystbt" path="res://scenes/bubbledex/bubbledex.tscn" id="2_n2noc"]
 
-[node name="PauseOverlay" type="CenterContainer"]
+[node name="PauseOverlay" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -10,26 +12,59 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q2yda")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+[node name="BubbledexContainer" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bubbledex" parent="BubbledexContainer" instance=ExtResource("2_n2noc")]
+layout_mode = 2
+anchors_preset = 0
+
+[node name="ExitBubbledex" type="Button" parent="BubbledexContainer"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 670.0
+offset_right = 256.0
+offset_bottom = 710.0
+text = "Exit Bubbledex"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 547.0
+offset_top = 284.0
+offset_right = 732.0
+offset_bottom = 436.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer3"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer3"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "game_paused"
 horizontal_alignment = 1
 
-[node name="MenuContainer" type="VBoxContainer" parent="VBoxContainer3"]
+[node name="MenuContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="ResumeButton" type="Button" parent="VBoxContainer3/MenuContainer"]
+[node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "resume_game"
 
-[node name="ExitButton" type="Button" parent="VBoxContainer3/MenuContainer"]
+[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "leave_game"
+
+[node name="BubbledexButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Bubbledex"
