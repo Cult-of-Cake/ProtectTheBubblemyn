@@ -15,6 +15,10 @@ var speedup = false
 var speedupTimer
 var invincible = false
 
+#weapons
+const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_bubble_shooter.tscn")
+var weapons: Array[BasicBubbleShooter] = [null, null, null, null, null, null]
+
 #variables for referencing nodes
 var HPBar
 
@@ -23,6 +27,16 @@ func _ready():
 	hp = maxHP
 	HPBar.max_value = maxHP
 	HPBar.value = hp
+	
+	# instantiate weapons
+	# TODO: 2 hardcoded basic weapons for now, for testing
+	weapons[0] = basic_bubble_shooter_template.instantiate()
+	add_child(weapons[0])
+	weapons[0].global_position = Vector2(50, 0)
+	
+	weapons[1] = basic_bubble_shooter_template.instantiate()
+	add_child(weapons[1])
+	weapons[1].global_position = Vector2(-50, 0)
 	
 	#this should ultimately all get triggered from somewhere else
 	#await get_tree().create_timer(5).timeout
@@ -47,9 +61,8 @@ func _attack():
 	
 	# Recieves input to attack
 	if Input.is_action_just_pressed("attack"):
-		
-		# Add what the attack does here
-		print("attack occured")
+		if weapons[0] != null:
+			weapons[0].shoot()
 
 #region Power-Ups
 
