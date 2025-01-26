@@ -1,11 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://bnjchehacjf"]
 
-[ext_resource type="Script" path="res://scenes/game/power_ups_node.gd" id="1_kvflg"]
+[ext_resource type="Script" path="res://code/power_ups_node.gd" id="1_kvflg"]
 
 [node name="Power-Up" type="Node2D"]
 script = ExtResource("1_kvflg")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="spawn_powerup"]
