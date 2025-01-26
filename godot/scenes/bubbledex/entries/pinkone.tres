@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Bubbledex_Entry" load_steps=3 format=3 uid="uid://bvmp0fv147wa3"]
+
+[ext_resource type="Texture2D" uid="uid://8w5gkhr4ux4h" path="res://graphics/bubbledex/pink.png" id="1_harfw"]
+[ext_resource type="Script" path="res://scenes/bubbledex/bubbledex_entry.gd" id="2_f0sl0"]
+
+[resource]
+script = ExtResource("2_f0sl0")
+entry_name = "Dust Fluffy"
+id = "basic_melee"
+image = ExtResource("1_harfw")
+description = "When dust gathers, it becomes a dust bunny – or in this case, a Dust Fluffy. Like rabbits, they multiply and can quickly overwhelm an area."
