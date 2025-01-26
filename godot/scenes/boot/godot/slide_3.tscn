@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://1un532c8f81r" path="res://scenes/boot/godot/slide3content.tscn" id="3_dgs61"]
 [ext_resource type="PackedScene" uid="uid://d1ecl8o0wky3r" path="res://scenes/boot/godot/slide_4.tscn" id="4_htjkh"]
 
-[node name="GodotBootsplashScene" type="Control"]
+[node name="GodotBootsplashScene2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

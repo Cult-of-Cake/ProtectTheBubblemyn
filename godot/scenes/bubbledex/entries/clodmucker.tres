@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Bubbledex_Entry" load_steps=3 format=3 uid="uid://bu2si32lmg07p"]
+[gd_resource type="Resource" script_class="Bubbledex_Entry" load_steps=3 format=3 uid="uid://dkp8hjtjm0kaa"]
 
 [ext_resource type="Texture2D" uid="uid://dgpkrafnedf6t" path="res://graphics/bubbledex/clodmucker.png" id="1_r6kqt"]
 [ext_resource type="Script" path="res://scenes/bubbledex/bubbledex_entry.gd" id="2_y3py4"]
