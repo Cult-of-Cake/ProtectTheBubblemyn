@@ -179,7 +179,7 @@ func take_damage(damage):
 	HPBar.value = hp
 	
 #region Levelling
-var milestones = [5, 10, 20, 40, 65, 100]
+var milestones = [5, 10, 20, 40, 60, 80]
 var hit = [false, false, false, false, false]
 
 var current_xp : int = 0
@@ -195,6 +195,7 @@ func offer_weapon_screen() -> void:
 	get_viewport().set_input_as_handled()
 	get_tree().paused = true
 	pause_overlay.grab_button_focus()
+	pause_overlay.select_weapon_set()
 	# Show weapon chooser
 	pause_overlay.show()
 	pause_overlay.get_node("CenterContainer").hide()

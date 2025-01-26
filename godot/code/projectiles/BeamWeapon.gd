@@ -2,7 +2,7 @@ extends Weapon
 class_name BeamWeapon
 
 var rayLength = 500
-var damage = 1
+var damage = 0.1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
