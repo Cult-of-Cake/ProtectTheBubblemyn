@@ -3,13 +3,22 @@
 [ext_resource type="Script" path="res://code/weapons/BasicBubbleShooter.gd" id="1_s3o8i"]
 
 [sub_resource type="Gradient" id="Gradient_lugps"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+colors = PackedColorArray(0, 0, 1, 1, 1, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_dq2rl"]
 gradient = SubResource("Gradient_lugps")
-width = 1
+width = 2
 
 [node name="BasicBubbleShooter" type="Sprite2D"]
+position = Vector2(40, 0)
 scale = Vector2(40, 20)
 texture = SubResource("GradientTexture1D_dq2rl")
 script = ExtResource("1_s3o8i")
+
+[node name="ProjectileSpawnPosition" type="Node2D" parent="."]
+position = Vector2(1, 0)
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_shoot"]
