@@ -27,11 +27,14 @@ var USER_SETTING_DEFAULTS = {
 	GAME_LANGUAGE:"en"
 }
 
+var UNLOCKED_BUBBLEDEX_ENTRIES
+
 var config:ConfigFile
 
 func _ready():
 	config = ConfigFile.new()
 	config.load(SETTINGS_FILE)
+	UNLOCKED_BUBBLEDEX_ENTRIES = ["green_one", "pink_one"]
 	_configure_audio()
 	_configure_language()
 	

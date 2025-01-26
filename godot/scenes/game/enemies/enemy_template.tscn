@@ -8,13 +8,13 @@ radius = 5.12103
 height = 34.5856
 
 [node name="Mook" type="CharacterBody2D"]
-position = Vector2(298, 180)
 scale = Vector2(0.34693, 0.390504)
 collision_layer = 2
 script = ExtResource("1_5pwve")
+enemy_id = "basic_melee"
 strength = 2.0
 speed = 5.0
-path = 1
+path = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_lin4m")
