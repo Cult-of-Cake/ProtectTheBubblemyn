@@ -16,6 +16,5 @@ func _process(delta: float) -> void:
 	pass
 
 func on_collect(body : Player):
-	print("collided")
 	body.on_powerup_collide(type)
 	queue_free()
