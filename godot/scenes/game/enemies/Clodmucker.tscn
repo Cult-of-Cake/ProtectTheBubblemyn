@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvf4vn3p2nsep"]
+[gd_scene load_steps=9 format=3 uid="uid://d13geyni6r48e"]
 
 [ext_resource type="Script" path="res://code/enemies/clodmucker.gd" id="1_tebhd"]
-[ext_resource type="Texture2D" uid="uid://cw4mxp0dap177" path="res://graphics/sprites/clod/sprite_beast_clod_1.png" id="2_7eod4"]
-[ext_resource type="Texture2D" uid="uid://cw1yhcne0fcm6" path="res://graphics/sprites/clod/sprite_beast_clod_2.png" id="3_2gnen"]
-[ext_resource type="Texture2D" uid="uid://cvj4t2qjwqo2x" path="res://graphics/sprites/clod/sprite_beast_clod_3.png" id="4_4u3jl"]
-[ext_resource type="Texture2D" uid="uid://dqnao4v1xni54" path="res://graphics/sprites/clod/sprite_beast_clod_4.png" id="5_a671u"]
+[ext_resource type="Texture2D" uid="uid://bouu8hl2lmbhv" path="res://graphics/sprites/clod/sprite_beast_clod_1.png" id="2_7eod4"]
+[ext_resource type="Texture2D" uid="uid://bk8xeojcsmv2t" path="res://graphics/sprites/clod/sprite_beast_clod_2.png" id="3_2gnen"]
+[ext_resource type="Texture2D" uid="uid://dluls7d471x8w" path="res://graphics/sprites/clod/sprite_beast_clod_3.png" id="4_4u3jl"]
+[ext_resource type="Texture2D" uid="uid://ddn8ksb64qgsb" path="res://graphics/sprites/clod/sprite_beast_clod_4.png" id="5_a671u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cggq2"]
 animations = [{
@@ -41,6 +41,8 @@ radius = 55.0818
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_tebhd")
+enemy_id = "clodmucker"
+uid = 3
 current_health = 2
 strength = 2.0
 xp_worth = 2
