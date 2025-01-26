@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bch2q0ltcs1on" path="res://graphics/beast_placeholder.png" id="2_lin4m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7bb7"]
-radius = 38.4079
-height = 92.2281
+radius = 7.72308
+height = 34.5855
 
 [node name="Mook" type="CharacterBody2D"]
 scale = Vector2(0.34693, 0.390504)
@@ -22,7 +22,7 @@ xp_worth = 3
 texture = ExtResource("2_lin4m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6.26197e-08, 5.12159)
+position = Vector2(2.38419e-07, 30.7295)
 rotation = -1.5852
 shape = SubResource("CapsuleShape2D_c7bb7")
 
