@@ -46,6 +46,8 @@ const weapon_slot_orientations: Array[Vector2] = [ \
 
 const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_bubble_shooter.tscn")
 const bath_bomb_launcher_template = preload("res://scenes/game/weapons/bath_bomb_launcher.tscn")
+const scatter_shot_template = preload("res://scenes/game/weapons/scatter_shot.tscn")
+
 var basicStarterWeapon: Weapon
 var weapons: Array[Weapon] = [null, null, null, null, null, null]
 
