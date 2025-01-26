@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://b4m61wlfkkmqj"]
 
 [ext_resource type="Script" path="res://code/enemies/Enemy.gd" id="1_5pwve"]
-[ext_resource type="Texture2D" uid="uid://bgj7p4fngdxiw" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_1.png" id="2_rnmh8"]
-[ext_resource type="Texture2D" uid="uid://bykyuasc0mwno" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_2.png" id="3_gagl1"]
-[ext_resource type="Texture2D" uid="uid://vxl8uxg8eie6" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_5.png" id="4_6500q"]
-[ext_resource type="Texture2D" uid="uid://fsx1s0nw38is" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_6.png" id="5_mbqf2"]
-[ext_resource type="Texture2D" uid="uid://yrfiro4domyy" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_3.png" id="6_6587i"]
-[ext_resource type="Texture2D" uid="uid://dfr0f1f2daj6" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_4.png" id="7_h3dmp"]
-[ext_resource type="Texture2D" uid="uid://ckio0akdagkpj" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_7.png" id="8_vyj6b"]
-[ext_resource type="Texture2D" uid="uid://cnsh1yighybhc" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_8.png" id="9_51bce"]
+[ext_resource type="Texture2D" uid="uid://bbsyuex2kjeru" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_1.png" id="2_rnmh8"]
+[ext_resource type="Texture2D" uid="uid://gj1bwxoh4uty" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_2.png" id="3_gagl1"]
+[ext_resource type="Texture2D" uid="uid://b64wncpfmw82p" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_5.png" id="4_6500q"]
+[ext_resource type="Texture2D" uid="uid://b4brlyb2gn8pk" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_6.png" id="5_mbqf2"]
+[ext_resource type="Texture2D" uid="uid://cge5yn3cpml5f" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_3.png" id="6_6587i"]
+[ext_resource type="Texture2D" uid="uid://c5ws3ibg15ben" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_4.png" id="7_h3dmp"]
+[ext_resource type="Texture2D" uid="uid://y6ter21jydle" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_7.png" id="8_vyj6b"]
+[ext_resource type="Texture2D" uid="uid://b7idbdl18yawg" path="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_8.png" id="9_51bce"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dbkol"]
 animations = [{
