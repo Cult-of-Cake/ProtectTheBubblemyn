@@ -46,6 +46,7 @@ const weapon_slot_orientations: Array[Vector2] = [ \
 
 const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_bubble_shooter.tscn")
 const bath_bomb_launcher_template = preload("res://scenes/game/weapons/bath_bomb_launcher.tscn")
+var basicStarterWeapon: Weapon
 var weapons: Array[Weapon] = [null, null, null, null, null, null]
 
 #variables for referencing nodes
@@ -57,9 +58,13 @@ func _ready():
 	HPBar.max_value = maxHP
 	HPBar.value = hp
 	
-	# instantiate single basic weapon in first slot
+	# instantiate single basic weapon
+	basicStarterWeapon = basic_bubble_shooter_template.instantiate()
+	add_child(basicStarterWeapon)
+	# Basic weapon shoots from the centre of the player creature
+	basicStarterWeapon.position = Vector2(0.0, 0.0)
+	
 	# TODO - TESTING
-	#addWeaponToSlot(0, basic_bubble_shooter_template)
 	addWeaponToSlot(0, bath_bomb_launcher_template)
 	
 	#this should ultimately all get triggered from somewhere else
