@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpixprqj8ay5f"
-path="res://.godot/imported/sprite_beast_dustfluffy_1.png-60e755150ad2c6d34e9483f1da06a660.ctex"
+uid="uid://cge5yn3cpml5f"
+path="res://.godot/imported/sprite_beast_dustfluffy_3.png-f7631ea06ede68019f8245f8b43f383d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/sprites/sprite_beast_dustfluffy_1.png"
-dest_files=["res://.godot/imported/sprite_beast_dustfluffy_1.png-60e755150ad2c6d34e9483f1da06a660.ctex"]
+source_file="res://graphics/sprites/dustfluffy/sprite_beast_dustfluffy_3.png"
+dest_files=["res://.godot/imported/sprite_beast_dustfluffy_3.png-f7631ea06ede68019f8245f8b43f383d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy37nqh7u6f5h"
-path="res://.godot/imported/sprite_beast_dustfluffy_8.png-bd8b8e9d49cc1b7c137c783ba02b6e02.ctex"
+uid="uid://ccv0vbsar2ti5"
+path="res://.godot/imported/icon_bathbomb.png-d2558796988850380c4a5ba0ea488d9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/sprites/sprite_beast_dustfluffy_8.png"
-dest_files=["res://.godot/imported/sprite_beast_dustfluffy_8.png-bd8b8e9d49cc1b7c137c783ba02b6e02.ctex"]
+source_file="res://graphics/icons/icon_bathbomb.png"
+dest_files=["res://.godot/imported/icon_bathbomb.png-d2558796988850380c4a5ba0ea488d9a.ctex"]
 
 [params]
 

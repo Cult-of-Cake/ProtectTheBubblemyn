@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwerlytfystbt"]
+[gd_scene load_steps=6 format=3 uid="uid://cwerlytfystbt"]
 
 [ext_resource type="Script" path="res://scenes/bubbledex/bubbledex.gd" id="1_23b7k"]
 [ext_resource type="Script" path="res://scenes/bubbledex/bubbledex_entry.gd" id="2_2c3py"]
 [ext_resource type="Resource" uid="uid://djqa8kv1yih1q" path="res://scenes/bubbledex/entries/greenone.tres" id="3_0qj2e"]
 [ext_resource type="Resource" uid="uid://bvmp0fv147wa3" path="res://scenes/bubbledex/entries/pinkone.tres" id="4_0gkob"]
+[ext_resource type="Resource" uid="uid://dtt2m85rqnb0i" path="res://scenes/bubbledex/entries/salmanillo.tres" id="5_l0it7"]
 
 [node name="Bubbledex" type="Control"]
 layout_mode = 3
@@ -17,17 +18,39 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_23b7k")
-entries = Array[ExtResource("2_2c3py")]([ExtResource("3_0qj2e"), ExtResource("4_0gkob")])
+entries = Array[ExtResource("2_2c3py")]([ExtResource("3_0qj2e"), ExtResource("4_0gkob"), ExtResource("5_l0it7")])
 metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 660.0
+color = Color(0, 0, 0, 0.392157)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = 310.0
+offset_right = 736.0
+offset_bottom = 700.0
+color = Color(0, 0, 0, 0.392157)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = 746.0
+offset_right = 1260.0
+offset_bottom = 700.0
+color = Color(0, 0, 0, 0.392157)
 
 [node name="ItemList" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 0
 offset_right = 300.0
 offset_bottom = 660.0
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 2
 offset_left = 310.0
 offset_right = 736.0
@@ -35,6 +58,7 @@ offset_bottom = 700.0
 metadata/_edit_lock_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 1
 layout_mode = 0
 offset_left = 746.0
 offset_right = 1260.0

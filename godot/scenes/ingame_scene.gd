@@ -19,4 +19,6 @@ func _input(event) -> void:
 		pause_overlay.visible = true
 		
 func _save_game() -> void:
-	SaveGame.save_game(get_tree())
+	#Impliment save games a stretch goal
+	pass
+	#SaveGame.save_game(get_tree())

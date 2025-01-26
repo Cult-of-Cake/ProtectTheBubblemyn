@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmu20nf68af3"
-path="res://.godot/imported/sprite_beast_salmonillo_2.png-7a14344d5e9cb975177b01400a8e448c.ctex"
+uid="uid://cvl8n0cxdwbf0"
+path="res://.godot/imported/sprite_beast_salmonillo_3.png-cadf83da8caf5a38ebbdecea29d4a547.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/sprites/sprite_beast_salmonillo_2.png"
-dest_files=["res://.godot/imported/sprite_beast_salmonillo_2.png-7a14344d5e9cb975177b01400a8e448c.ctex"]
+source_file="res://graphics/sprites/salmonillo/sprite_beast_salmonillo_3.png"
+dest_files=["res://.godot/imported/sprite_beast_salmonillo_3.png-cadf83da8caf5a38ebbdecea29d4a547.ctex"]
 
 [params]
 

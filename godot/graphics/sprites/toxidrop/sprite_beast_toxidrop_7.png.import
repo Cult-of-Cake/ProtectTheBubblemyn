@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpdgd6gve4mmf"
-path="res://.godot/imported/sprite_beast_toxidrop_6.png-8531fbbcf572bd581b5912a5bb1ad438.ctex"
+uid="uid://b4gpmki8nupwm"
+path="res://.godot/imported/sprite_beast_toxidrop_7.png-577b9e821d820a548e817cf2c12e78dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/sprites/sprite_beast_toxidrop_6.png"
-dest_files=["res://.godot/imported/sprite_beast_toxidrop_6.png-8531fbbcf572bd581b5912a5bb1ad438.ctex"]
+source_file="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_7.png"
+dest_files=["res://.godot/imported/sprite_beast_toxidrop_7.png-577b9e821d820a548e817cf2c12e78dc.ctex"]
 
 [params]
 
