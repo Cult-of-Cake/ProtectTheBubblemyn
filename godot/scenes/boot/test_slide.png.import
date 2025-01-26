@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hacrthdx3x2x"
-path="res://.godot/imported/icon_soap_placeholder.png-3e4ac2471976cf4f81d140029781b984.ctex"
+uid="uid://ci7c68q2fvcrm"
+path="res://.godot/imported/test_slide.png-bab77a82fc0cd4739864297ee73f97d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/icons/icon_soap_placeholder.png"
-dest_files=["res://.godot/imported/icon_soap_placeholder.png-3e4ac2471976cf4f81d140029781b984.ctex"]
+source_file="res://scenes/boot/test_slide.png"
+dest_files=["res://.godot/imported/test_slide.png-bab77a82fc0cd4739864297ee73f97d7.ctex"]
 
 [params]
 
