@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_f0sl0")
-entry_name = "Pynk One"
-id = "pink_one"
+entry_name = "Dust Fluffy"
+id = "basic_melee"
 image = ExtResource("1_harfw")
-description = "it pink"
+description = "When dust gathers, it becomes a dust bunny – or in this case, a Dust Fluffy. Like rabbits, they multiply and can quickly overwhelm an area."

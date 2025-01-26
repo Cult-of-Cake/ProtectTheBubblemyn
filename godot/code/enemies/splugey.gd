@@ -1,4 +1,4 @@
-extends "res://code/enemies/Enemy.gd"
+extends Enemy
 
 var bulletRes = load("res://scenes/game/projectiles/grime_projectile.tscn")
 
