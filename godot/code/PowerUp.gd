@@ -1,7 +1,7 @@
 extends Node2D
 class_name PowerUp
 
-enum Types { SPEEDUP, INVINCIBLE }
+enum Types { SPEEDUP, INVINCIBLE, ENUM_SIZE }
 var icon_name = [ "maid_hat", "soap" ]
 @export var type : Types
 
@@ -16,5 +16,6 @@ func _process(delta: float) -> void:
 	pass
 
 func on_collect(body : Player):
+	print("collided")
 	body.on_powerup_collide(type)
 	queue_free()
