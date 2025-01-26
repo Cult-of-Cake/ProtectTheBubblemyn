@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func shoot() -> void:
+func _shoot() -> void:
 	pass

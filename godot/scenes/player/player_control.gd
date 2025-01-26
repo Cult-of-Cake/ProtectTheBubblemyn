@@ -54,14 +54,14 @@ func _ready():
 	HPBar.max_value = maxHP
 	HPBar.value = hp
 	
-	# instantiate weapons
-	for n in range(6):
-		var newWeapon = basic_bubble_shooter_template.instantiate()
-		add_child(newWeapon)
-		newWeapon.rotation = weapon_slot_rotations[n]
-		newWeapon.position = weapon_slot_positions[n]
-		newWeapon.orientation = weapon_slot_orientations[n]
-		weapons[n] = newWeapon
+	# instantiate single basic weapon in first slot
+	var n = 0
+	var newWeapon = basic_bubble_shooter_template.instantiate()
+	add_child(newWeapon)
+	newWeapon.rotation = weapon_slot_rotations[n]
+	newWeapon.position = weapon_slot_positions[n]
+	newWeapon.orientation = weapon_slot_orientations[n]
+	weapons[n] = newWeapon
 	
 	#this should ultimately all get triggered from somewhere else
 	#await get_tree().create_timer(5).timeout
@@ -97,22 +97,12 @@ func _physics_process(delta: float) -> void:
 	
 	
 	move_and_slide()
-	
-	_attack()
 
 func clearSprites():
 	get_node("Facing").visible = false
 	get_node("Left").visible = false
 	get_node("Right").visible = false
 	get_node("Away").visible = false
-
-func _attack():
-	
-	# Recieves input to attack
-	if Input.is_action_just_pressed("attack"):
-		for w in weapons:
-			if w != null:
-				w.shoot()
 
 #region Power-Ups
 

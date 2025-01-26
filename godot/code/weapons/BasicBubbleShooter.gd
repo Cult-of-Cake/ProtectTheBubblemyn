@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func shoot() -> void:
+func _shoot() -> void:
 	var bullet = bubble_projectile_template.instantiate()
 	bullet.global_position = $ProjectileSpawnPosition.global_position
 	bullet.velocity = orientation
