@@ -57,13 +57,7 @@ func _ready():
 	HPBar.value = hp
 	
 	# instantiate single basic weapon in first slot
-	var n = 0
-	var newWeapon = basic_bubble_shooter_template.instantiate()
-	add_child(newWeapon)
-	newWeapon.rotation = weapon_slot_rotations[n]
-	newWeapon.position = weapon_slot_positions[n]
-	newWeapon.orientation = weapon_slot_orientations[n]
-	weapons[n] = newWeapon
+	addWeaponToSlot(0, basic_bubble_shooter_template)
 	
 	#this should ultimately all get triggered from somewhere else
 	#await get_tree().create_timer(5).timeout
@@ -105,6 +99,20 @@ func clearSprites():
 	get_node("Left").visible = false
 	get_node("Right").visible = false
 	get_node("Away").visible = false
+
+func addWeaponToSlot(slotIndex: int, weaponTemplate: Resource) -> void:
+	assert(slotIndex >= 0 && slotIndex < 6)
+	var newWeapon = weaponTemplate.instantiate()
+	add_child(newWeapon)
+	newWeapon.rotation = weapon_slot_rotations[slotIndex]
+	newWeapon.position = weapon_slot_positions[slotIndex]
+	newWeapon.orientation = weapon_slot_orientations[slotIndex]
+	weapons[slotIndex] = newWeapon
+func firstFreeWeaponsSlot() -> int:
+	for n in range(6):
+		if weapons[n] == null:
+			return n
+	return -1
 
 #region Power-Ups
 
@@ -151,7 +159,7 @@ func activateSoap():
 
 func take_damage(damage):
 	if !isSoap:
-	  hp = clamp(hp - damage, 0, maxHP)
+		hp = clamp(hp - damage, 0, maxHP)
 	HPBar.value = hp
 	
 #region Levelling
