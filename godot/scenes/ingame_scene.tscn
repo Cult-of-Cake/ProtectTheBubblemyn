@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=11 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
+[ext_resource type="Script" path="res://scenes/game/map.gd" id="5_phjcr"]
 [ext_resource type="PackedScene" uid="uid://bceb234jm68b" path="res://scenes/game/map.tscn" id="6_50u7o"]
 [ext_resource type="PackedScene" uid="uid://dtrqach0bufxc" path="res://scenes/game/player.tscn" id="7_q486o"]
 [ext_resource type="PackedScene" uid="uid://cimplldinodk3" path="res://scenes/game/enemies/enemies.tscn" id="8_ufbwt"]
 [ext_resource type="PackedScene" uid="uid://bnjchehacjf" path="res://scenes/game/power_up.tscn" id="9_4ty52"]
+[ext_resource type="Texture2D" uid="uid://cn6fguur4725a" path="res://graphics/maps/Map.png" id="9_qmqw7"]
 [ext_resource type="PackedScene" uid="uid://cto1xlkr5nxxd" path="res://scenes/game/projectiles.tscn" id="10_6n2ns"]
 
 [node name="IngameScene" type="Node2D"]
@@ -24,6 +26,7 @@ process_mode = 2
 visible = false
 
 [node name="Map" parent="." instance=ExtResource("6_50u7o")]
+script = ExtResource("5_phjcr")
 
 [node name="Player" parent="Map" instance=ExtResource("7_q486o")]
 
@@ -32,3 +35,7 @@ visible = false
 [node name="Power-Ups" parent="Map" instance=ExtResource("9_4ty52")]
 
 [node name="Projectiles" parent="Map" instance=ExtResource("10_6n2ns")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map"]
+z_index = -11
+texture = ExtResource("9_qmqw7")
