@@ -128,6 +128,7 @@ func firstFreeWeaponsSlot() -> int:
 #region Power-Ups
 
 func on_powerup_collide(item : PowerUp.Types):
+	AudioController.play_bubbleup()
 	match item:
 		PowerUp.Types.SPEEDUP:
 			activateSpeedup()
@@ -169,6 +170,7 @@ func activateSoap():
 #endregion
 
 func take_damage(damage):
+	AudioController.play_mudhit()
 	if !isSoap:
 		hp = clamp(hp - damage, 0, maxHP)
 		print("hp is ", hp)

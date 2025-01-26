@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://n47gaigvqy8b"]
+
+[ext_resource type="Script" path="res://audio_controller.gd" id="1_vhp05"]
+[ext_resource type="AudioStream" uid="uid://ts7m3sp71x1s" path="res://sfx/sfx_mud_splat.wav" id="2_s3qp4"]
+[ext_resource type="AudioStream" uid="uid://myqg8xn00sd5" path="res://sfx/sfx_bubble_up.wav" id="3_vlbl8"]
+[ext_resource type="AudioStream" uid="uid://dhyvxk4hn2hps" path="res://sfx/sfx_bubble_pop.wav" id="4_whmsf"]
+
+[node name="AudioController" type="Node2D"]
+script = ExtResource("1_vhp05")
+
+[node name="MudHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_s3qp4")
+
+[node name="BubbbleUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vlbl8")
+
+[node name="BubbleHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_whmsf")

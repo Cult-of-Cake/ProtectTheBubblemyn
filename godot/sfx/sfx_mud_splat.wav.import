@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://myqg8xn00sd5"
-path="res://.godot/imported/sfx_bubble_up.wav-76d509eaf4204adf3b895eb2e152faba.sample"
+uid="uid://ts7m3sp71x1s"
+path="res://.godot/imported/sfx_mud_splat.wav-9a1b7b6b4a33e6038ca857db922c1a4c.sample"
 
 [deps]
 
-source_file="res://sfx/sfx_bubble_up.wav"
-dest_files=["res://.godot/imported/sfx_bubble_up.wav-76d509eaf4204adf3b895eb2e152faba.sample"]
+source_file="res://sfx/sfx_mud_splat.wav"
+dest_files=["res://.godot/imported/sfx_mud_splat.wav-9a1b7b6b4a33e6038ca857db922c1a4c.sample"]
 
 [params]
 
