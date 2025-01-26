@@ -130,7 +130,6 @@ func activateSpeedup():
 	speedup = false
 
 func activateSoap():
-	print("Activated!")
 	isSoap = true
 	get_node("Soapsprite").visible = true
 	var timeLeft
@@ -148,7 +147,8 @@ func activateSoap():
 #endregion
 
 func take_damage(damage):
-	hp = hp - damage
+	if !isSoap:
+		hp = hp - damage
 	HPBar.value = hp
 	
 #region Levelling
@@ -162,7 +162,7 @@ func on_enemy_killed(enemy : Enemy) -> void:
 
 func collisionWithEnemy(body: Node2D) -> void:
 	if isSoap:
-		body.take_damage(100)
+		body.take_damage(body.strength)
 	else:
 		var toBody = body.position - position
 		body.position = body.position + toBody
