@@ -59,7 +59,7 @@ func _ready():
 	
 	# instantiate single basic weapon in first slot
 	# TODO - TESTING
-	#addWeaponToSlot(0, bath_bomb_launcher_template)
+	addWeaponToSlot(0, bath_bomb_launcher_template)
 	
 	#this should ultimately all get triggered from somewhere else
 	#await get_tree().create_timer(5).timeout
