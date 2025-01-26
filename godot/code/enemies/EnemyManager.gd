@@ -63,6 +63,7 @@ func _process(delta: float) -> void:
 
 
 func on_enemy_died(enemy : Enemy) -> void:
+	AudioController.play_bubblehit()
 	var id_num = enemy.uid
 	var id_string = enemy.enemy_id
 	kill_count[id_num] += 1
