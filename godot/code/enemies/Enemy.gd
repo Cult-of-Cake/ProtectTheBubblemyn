@@ -7,7 +7,7 @@ var isEnemy : bool = true
 
 @export var enemy_id : String
 @export var uid : int
-@export var current_health : int
+@export var current_health : float
 @export var strength : float
 @export var speed : float
 @export var path : pathOptions
@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 		velocity = direction * speed * 5
 		move_and_slide()
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: float) -> void:
 	current_health -= damage
 	if current_health < 0:
 		die()
