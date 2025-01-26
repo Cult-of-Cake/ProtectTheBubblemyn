@@ -1,20 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwerlytfystbt"]
-
+[gd_scene load_steps=11 format=3 uid="uid://cwerlytfystbt"]
 
 [ext_resource type="Script" path="res://scenes/bubbledex/bubbledex.gd" id="1_23b7k"]
 [ext_resource type="Script" path="res://scenes/bubbledex/bubbledex_entry.gd" id="2_2c3py"]
 [ext_resource type="Resource" uid="uid://djqa8kv1yih1q" path="res://scenes/bubbledex/entries/greenone.tres" id="3_0qj2e"]
 [ext_resource type="Resource" uid="uid://bvmp0fv147wa3" path="res://scenes/bubbledex/entries/pinkone.tres" id="4_0gkob"]
-
-[ext_resource type="Resource" uid="uid://dtt2m85rqnb0i" path="res://scenes/bubbledex/entries/salmanillo.tres" id="5_l0it7"]
-[ext_resource type="Resource" uid="uid://je1h2ro77bed" path="res://scenes/bubbledex/entries/bubblemyn.tres" id="6_wjg6i"]
-[ext_resource type="Resource" uid="uid://d0oso0l1cof05" path="res://scenes/bubbledex/entries/soap.tres" id="7_1ef12"]
-[ext_resource type="Resource" uid="uid://detmu8e1gv3mk" path="res://scenes/bubbledex/entries/mrgreen.tres" id="8_xagf1"]
-[ext_resource type="Resource" uid="uid://c3aiar18js852" path="res://scenes/bubbledex/entries/brush.tres" id="9_83nlr"]
 [ext_resource type="Resource" path="res://scenes/bubbledex/entries/salmanillo.tres" id="5_l0it7"]
 [ext_resource type="Resource" path="res://scenes/bubbledex/entries/bubblemyn.tres" id="6_wjg6i"]
-[ext_resource type="Resource" uid="uid://bu2si32lmg07p" path="res://scenes/bubbledex/entries/clodmucker.tres" id="7_os75a"]
-
+[ext_resource type="Resource" path="res://scenes/bubbledex/entries/soap.tres" id="7_1ef12"]
+[ext_resource type="Resource" path="res://scenes/bubbledex/entries/mrgreen.tres" id="8_xagf1"]
+[ext_resource type="Resource" path="res://scenes/bubbledex/entries/brush.tres" id="9_83nlr"]
+[ext_resource type="Resource" uid="uid://dkp8hjtjm0kaa" path="res://scenes/bubbledex/entries/clodmucker.tres" id="10_2air4"]
 
 [node name="Bubbledex" type="Control"]
 layout_mode = 3
@@ -28,7 +23,7 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_23b7k")
-entries = Array[ExtResource("2_2c3py")]([ExtResource("6_wjg6i"), ExtResource("3_0qj2e"), ExtResource("4_0gkob"), ExtResource("5_l0it7"), ExtResource("7_1ef12"), ExtResource("8_xagf1"), ExtResource("9_83nlr")])
+entries = Array[ExtResource("2_2c3py")]([ExtResource("6_wjg6i"), ExtResource("3_0qj2e"), ExtResource("4_0gkob"), ExtResource("5_l0it7"), ExtResource("7_1ef12"), ExtResource("8_xagf1"), ExtResource("9_83nlr"), ExtResource("10_2air4")])
 metadata/_edit_lock_ = true
 
 [node name="color1" type="ColorRect" parent="."]

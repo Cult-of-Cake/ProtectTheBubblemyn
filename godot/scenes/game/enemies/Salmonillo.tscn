@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4qg8tjkancq"]
+[gd_scene load_steps=15 format=3 uid="uid://cqxovn4dt7hej"]
 
 [ext_resource type="Texture2D" uid="uid://degfx8dqss8dg" path="res://graphics/sprites/salmonillo/sprite_beast_salmonillo_1.png" id="1_1khtn"]
 [ext_resource type="Script" path="res://code/enemies/salmonillo.gd" id="1_g5g37"]
