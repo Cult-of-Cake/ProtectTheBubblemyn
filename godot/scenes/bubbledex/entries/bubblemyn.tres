@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Bubbledex_Entry" load_steps=3 format=3 uid="uid://je1h2ro77bed"]
+
+[ext_resource type="Texture2D" uid="uid://m08ix3rqfb2y" path="res://graphics/bubbledex/bubblemyn.png" id="1_yx0dg"]
+[ext_resource type="Script" path="res://scenes/bubbledex/bubbledex_entry.gd" id="2_fv1no"]
+
+[resource]
+script = ExtResource("2_fv1no")
+entry_name = "Bübblemyn"
+id = "bubblemyn"
+image = ExtResource("1_yx0dg")
+description = "That’s me! Bübblemyn are amphibious creatures that live on a beautiful planet. We make great cleaners because of our ability to slide on soap and wield multiple bubble guns!
+"

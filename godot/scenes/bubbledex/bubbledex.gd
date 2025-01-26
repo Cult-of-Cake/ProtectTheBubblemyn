@@ -26,7 +26,10 @@ func rebuild_bubbledex() -> void:
 		button.text = entry.entry_name
 		button.pressed.connect(Callable(self, "_on_button_pressed").bind(entry))
 		button.visible = false
+		print("Searching for " + entry.id) 
+		print(globals.UNLOCKED_BUBBLEDEX_ENTRIES)
 		if entry.id in globals.UNLOCKED_BUBBLEDEX_ENTRIES:
+			print(entry.id + " Found!") 
 			button.visible = true
 		itemList.add_child(button)
 
