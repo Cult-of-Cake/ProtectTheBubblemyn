@@ -9,6 +9,7 @@ signal game_exited
 @onready var bubbledex_button = %BubbledexButton
 @onready var exit_bubbledex_button = %ExitBubbledex
 @onready var pause_menu_container = %CenterContainer
+@onready var weapon_buttons = [%NewWeapon1,%NewWeapon2,%NewWeapon3]
 
 func _ready() -> void:
 	resume_button.pressed.connect(_resume)
@@ -36,6 +37,8 @@ func _bubbledex() -> void:
 func _exit_bubbledex() -> void: 
 	bubbledex.visible = false
 	pause_menu_container.visible = true
+
+
 	
 	
 func _unhandled_input(event):
