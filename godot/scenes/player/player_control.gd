@@ -57,7 +57,13 @@ func _ready():
 	HPBar.value = hp
 	
 	# instantiate single basic weapon in first slot
-	addWeaponToSlot(0, basic_bubble_shooter_template)
+	var n = 0
+	var newWeapon = basic_bubble_shooter_template.instantiate()
+	add_child(newWeapon)
+	newWeapon.rotation = weapon_slot_rotations[n]
+	newWeapon.position = weapon_slot_positions[n]
+	newWeapon.orientation = weapon_slot_orientations[n]
+	weapons[n] = newWeapon
 	
 	#this should ultimately all get triggered from somewhere else
 	#await get_tree().create_timer(5).timeout
@@ -100,22 +106,6 @@ func clearSprites():
 	get_node("Right").visible = false
 	get_node("Away").visible = false
 
-
-func addWeaponToSlot(slotIndex: int, weaponTemplate: Resource) -> void:
-	assert(slotIndex >= 0 && slotIndex < 6)
-	var newWeapon = weaponTemplate.instantiate()
-	add_child(newWeapon)
-	newWeapon.rotation = weapon_slot_rotations[slotIndex]
-	newWeapon.position = weapon_slot_positions[slotIndex]
-	newWeapon.orientation = weapon_slot_orientations[slotIndex]
-	weapons[slotIndex] = newWeapon
-
-func firstFreeWeaponsSlot() -> int:
-	for n in range(6):
-		if weapons[n] == null:
-			return n
-	return -1
-
 #region Power-Ups
 
 func on_powerup_collide(item : PowerUp.Types):
@@ -140,7 +130,6 @@ func activateSpeedup():
 	speedup = false
 
 func activateSoap():
-	print("Activated!")
 	isSoap = true
 	get_node("Soapsprite").visible = true
 	var timeLeft
@@ -158,7 +147,8 @@ func activateSoap():
 #endregion
 
 func take_damage(damage):
-	hp = hp - damage
+	if !isSoap:
+		hp = hp - damage
 	HPBar.value = hp
 	
 #region Levelling
@@ -172,7 +162,7 @@ func on_enemy_killed(enemy : Enemy) -> void:
 
 func collisionWithEnemy(body: Node2D) -> void:
 	if isSoap:
-		body.take_damage(100)
+		body.take_damage(body.strength)
 	else:
 		var toBody = body.position - position
 		body.position = body.position + toBody
