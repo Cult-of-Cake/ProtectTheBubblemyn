@@ -9,12 +9,14 @@ class_name EnemyManager
 var enemy_template = preload("res://scenes/game/enemies/enemy_template.tscn")
 
 var enemy_splugey = preload("res://scenes/game/enemies/splugey.tscn")
+var enemy_salmonillo = preload("res://scenes/game/enemies/Salmonillo.tscn")
 
 var intensity = 0
 
 var temp_rate = 0
 
 var splug_rate = 0
+var salm_rate = 0
 
 
 var kill_count = [0, 0]
@@ -34,6 +36,11 @@ func on_spawn_timer() -> void:
 		if splug_rate == 5:
 			enemySpawn(enemy_splugey)
 			splug_rate = 0
+		
+		salm_rate += 1
+		if salm_rate >= 5:
+			enemySpawn(enemy_salmonillo)
+			salm_rate = 0
 			
 	
 func on_intensity_timer() -> void:

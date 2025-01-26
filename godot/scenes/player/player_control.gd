@@ -171,6 +171,7 @@ func activateSoap():
 func take_damage(damage):
 	if !isSoap:
 		hp = clamp(hp - damage, 0, maxHP)
+		print("hp is ", hp)
 	HPBar.value = hp
 	
 #region Levelling
@@ -184,8 +185,8 @@ func on_enemy_killed(enemy : Enemy) -> void:
 
 func collisionWithEnemy(body: Node2D) -> void:
 	if isSoap:
-		body.take_damage(body.strength)
+		body.take_damage(100)
 	else:
 		var toBody = body.position - position
 		body.position = body.position + toBody
-		take_damage(5)
+		take_damage(body.strength)

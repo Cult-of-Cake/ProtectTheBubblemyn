@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dtg4we8puij2i"]
 
 [ext_resource type="Script" path="res://code/enemies/splugey.gd" id="1_66tn5"]
-[ext_resource type="Texture2D" uid="uid://cjp4tpaiwaall" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_1.png" id="2_8lviy"]
-[ext_resource type="Texture2D" uid="uid://c1y23ltbyknul" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_2.png" id="3_rgs0d"]
+[ext_resource type="Texture2D" uid="uid://b3dmm7hm2sypm" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_1.png" id="2_8lviy"]
+[ext_resource type="Texture2D" uid="uid://c0tcgygtwif2k" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_2.png" id="3_rgs0d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ekhp8"]
 animations = [{

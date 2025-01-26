@@ -1,0 +1,105 @@
+[gd_scene load_steps=15 format=3 uid="uid://cqxovn4dt7hej"]
+
+[ext_resource type="Texture2D" uid="uid://degfx8dqss8dg" path="res://graphics/sprites/salmonillo/sprite_beast_salmonillo_1.png" id="1_1khtn"]
+[ext_resource type="Script" path="res://scenes/game/enemies/salmonillo.gd" id="1_g5g37"]
+[ext_resource type="Texture2D" uid="uid://cchs4ko7foj66" path="res://graphics/sprites/salmonillo/sprite_beast_salmonillo_2.png" id="2_1b1rj"]
+[ext_resource type="Texture2D" uid="uid://cmgyi74bn2cam" path="res://graphics/sprites/salmonillo/sprite_beast_salmonillo_3.png" id="3_x48eu"]
+[ext_resource type="Texture2D" uid="uid://cybnomcrwl6d6" path="res://graphics/sprites/salmonillo/sprite_beast_salmonillo_4.png" id="4_6arce"]
+[ext_resource type="Texture2D" uid="uid://bqmkbn3u6fqam" path="res://graphics/sprites/salmonillo/sprite_beast_salmonillo_5.png" id="5_y1lch"]
+[ext_resource type="Texture2D" uid="uid://s77k7jvo00ha" path="res://graphics/sprites/salmonillo/sprite_beast_salmonillo_6.png" id="6_i6hop"]
+[ext_resource type="Texture2D" uid="uid://cgfmf1dust77o" path="res://graphics/sprites/salmonillo/sprite_beast_salmonillo_7.png" id="7_eo8op"]
+[ext_resource type="Texture2D" uid="uid://cjvrqtdctngcd" path="res://graphics/sprites/salmonillo/sprite_beast_salmonillo_8.png" id="8_kk3b5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwwpe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1khtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1b1rj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n6f6i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x48eu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6arce")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vk4bt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_y1lch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i6hop")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v52ae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_eo8op")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kk3b5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_couc2"]
+radius = 60.0333
+
+[node name="Salmonillo" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_g5g37")
+strength = 10.0
+path = 2
+
+[node name="Facing" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xwwpe")
+autoplay = "default"
+
+[node name="Left" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_n6f6i")
+autoplay = "default"
+
+[node name="Right" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_vk4bt")
+autoplay = "default"
+
+[node name="Away" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_v52ae")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_couc2")
+
+[node name="MovementTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="MovementTimer" to="." method="set_goal_point"]
