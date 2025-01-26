@@ -1,11 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://cimplldinodk3"]
+[gd_scene load_steps=3 format=3 uid="uid://cimplldinodk3"]
 
 [ext_resource type="Script" path="res://code/enemies/EnemyManager.gd" id="1_7w7v3"]
+
+[sub_resource type="Curve2D" id="Curve2D_ulswy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1790.6, 688.172, 0, 0, 0, 0, -69.8024, 690.189, 0, 0, 0, 0, -69.8024, -40.4475, 0, 0, 0, 0, 1816.23, -43.0293, 0, 0, 0, 0, 1790.6, 688.172)
+}
+point_count = 5
 
 [node name="Enemies" type="Node2D"]
 script = ExtResource("1_7w7v3")
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="enemyTrack" type="Path2D" parent="."]
+position = Vector2(-640, -360)
+scale = Vector2(0.730634, 1.162)
+curve = SubResource("Curve2D_ulswy")
+
+[node name="enemySpawn" type="PathFollow2D" parent="enemyTrack"]
+position = Vector2(1790.6, 688.172)
+rotation = 3.14051
 
 [connection signal="timeout" from="SpawnTimer" to="." method="on_spawn_timer"]
