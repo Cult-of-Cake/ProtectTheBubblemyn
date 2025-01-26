@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Weapon
 class_name BasicBubbleShooter
 
 const bubble_projectile_template = preload("res://scenes/game/projectiles/bubble_projectile.tscn")
@@ -16,8 +16,7 @@ func _process(delta: float) -> void:
 
 func shoot() -> void:
 	var bullet = bubble_projectile_template.instantiate()
-	# bullet origin point is the weapon
-	# TODO - offset of barrel end?
 	bullet.global_position = $ProjectileSpawnPosition.global_position
+	bullet.velocity = orientation
 	# add bullet as child of (weapon -> player -> scene)
 	get_parent().get_parent().add_child(bullet)

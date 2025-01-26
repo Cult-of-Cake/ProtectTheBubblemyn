@@ -17,8 +17,33 @@ var speedupTimer
 var invincible = false
 
 #weapons
+const weapon_slot_rotations: Array[float] = [ \
+	0.0, \
+	PI/3, \
+	2*PI/3, \
+	PI, \
+	4*PI/3, \
+	5*PI/3 \
+]
+const weapon_slot_positions: Array[Vector2] = [ \
+	Vector2(50.0, 0.0), \
+	Vector2(25.0, 43.301270189221932338186158537647), \
+	Vector2(-25.0, 43.301270189221932338186158537647), \
+	Vector2(-50.0, 0.0), \
+	Vector2(-25.0, -43.301270189221932338186158537647), \
+	Vector2(25.0, -43.301270189221932338186158537647), \
+]
+const weapon_slot_orientations: Array[Vector2] = [ \
+	Vector2(1.0, 0.0), \
+	Vector2(0.5, 0.86602540378443864676372317075294), \
+	Vector2(-0.5, 0.86602540378443864676372317075294), \
+	Vector2(-1.0, 0.0), \
+	Vector2(-0.5, -0.86602540378443864676372317075294), \
+	Vector2(0.5, -0.86602540378443864676372317075294), \
+]
+
 const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_bubble_shooter.tscn")
-var weapons: Array[BasicBubbleShooter] = [null, null, null, null, null, null, null, null]
+var weapons: Array[Weapon] = [null, null, null, null, null, null]
 
 #variables for referencing nodes
 var HPBar
@@ -30,15 +55,13 @@ func _ready():
 	HPBar.value = hp
 	
 	# instantiate weapons
-	# TODO: 2 hardcoded basic weapons for now, for testing
-	weapons[0] = basic_bubble_shooter_template.instantiate()
-	add_child(weapons[0])
-	weapons[0].global_position = Vector2(50, 0)
-	
-	weapons[1] = basic_bubble_shooter_template.instantiate()
-	add_child(weapons[1])
-	weapons[1].rotation = PI  # half rotation
-	weapons[1].global_position = Vector2(-50, 0)
+	for n in range(6):
+		var newWeapon = basic_bubble_shooter_template.instantiate()
+		add_child(newWeapon)
+		newWeapon.rotation = weapon_slot_rotations[n]
+		newWeapon.position = weapon_slot_positions[n]
+		newWeapon.orientation = weapon_slot_orientations[n]
+		weapons[n] = newWeapon
 	
 	#this should ultimately all get triggered from somewhere else
 	#await get_tree().create_timer(5).timeout
@@ -87,8 +110,9 @@ func _attack():
 	
 	# Recieves input to attack
 	if Input.is_action_just_pressed("attack"):
-		if weapons[1] != null:
-			weapons[1].shoot()
+		for w in weapons:
+			if w != null:
+				w.shoot()
 
 #region Power-Ups
 

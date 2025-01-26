@@ -10,8 +10,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	queue_free()
 	
 func _ready():
-	var target = get_global_mouse_position()
-	velocity = position.direction_to(target)
 	await get_tree().create_timer(bulletLifespan).timeout
 	queue_free()
 	
