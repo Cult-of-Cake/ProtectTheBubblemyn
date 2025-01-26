@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://code/enemies/Enemy.gd" id="1_5pwve"]
 [ext_resource type="Texture2D" uid="uid://bch2q0ltcs1on" path="res://graphics/beast_placeholder.png" id="2_lin4m"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_llo7w"]
-radius = 5.12103
-height = 34.5856
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7bb7"]
+radius = 7.72308
+height = 34.5855
 
 [node name="Mook" type="CharacterBody2D"]
 scale = Vector2(0.34693, 0.390504)
@@ -22,9 +22,9 @@ xp_worth = 3
 texture = ExtResource("2_lin4m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.88244, 30.7295)
+position = Vector2(2.38419e-07, 30.7295)
 rotation = -1.5852
-shape = SubResource("CapsuleShape2D_llo7w")
+shape = SubResource("CapsuleShape2D_c7bb7")
 
 [node name="MovementTimer" type="Timer" parent="."]
 wait_time = 0.1
