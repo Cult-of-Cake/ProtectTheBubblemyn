@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://clq8bqsymnef2"]
+
+[ext_resource type="Script" path="res://code/weapons/BathBombLauncher.gd" id="1_50yy8"]
+
+[node name="BathBombLauncher" type="Sprite2D"]
+script = ExtResource("1_50yy8")
+
+[node name="ProjectileSpawnPosition" type="Node2D" parent="."]
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_shoot"]

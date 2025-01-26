@@ -45,6 +45,7 @@ const weapon_slot_orientations: Array[Vector2] = [ \
 ]
 
 const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_bubble_shooter.tscn")
+const bath_bomb_launcher_template = preload("res://scenes/game/weapons/bath_bomb_launcher.tscn")
 var weapons: Array[Weapon] = [null, null, null, null, null, null]
 
 #variables for referencing nodes
@@ -57,7 +58,9 @@ func _ready():
 	HPBar.value = hp
 	
 	# instantiate single basic weapon in first slot
-	addWeaponToSlot(0, basic_bubble_shooter_template)
+	# TODO - TESTING
+	#addWeaponToSlot(0, basic_bubble_shooter_template)
+	addWeaponToSlot(0, bath_bomb_launcher_template)
 	
 	#this should ultimately all get triggered from somewhere else
 	#await get_tree().create_timer(5).timeout
@@ -108,6 +111,7 @@ func addWeaponToSlot(slotIndex: int, weaponTemplate: Resource) -> void:
 	newWeapon.position = weapon_slot_positions[slotIndex]
 	newWeapon.orientation = weapon_slot_orientations[slotIndex]
 	weapons[slotIndex] = newWeapon
+
 func firstFreeWeaponsSlot() -> int:
 	for n in range(6):
 		if weapons[n] == null:
