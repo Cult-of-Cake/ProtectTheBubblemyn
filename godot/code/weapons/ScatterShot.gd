@@ -1,5 +1,5 @@
 extends Weapon
-class_name BasicBubbleShooter
+class_name ScatterShot
 
 const bubble_projectile_template = preload("res://scenes/game/projectiles/bubble_projectile.tscn")
 
