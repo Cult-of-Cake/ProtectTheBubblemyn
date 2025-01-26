@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=15 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -8,8 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://dtrqach0bufxc" path="res://scenes/game/player.tscn" id="7_q486o"]
 [ext_resource type="PackedScene" uid="uid://c1h0sgpggfcnt" path="res://scenes/game/enemies/enemies.tscn" id="8_ufbwt"]
 [ext_resource type="PackedScene" uid="uid://bnjchehacjf" path="res://scenes/game/power_up.tscn" id="9_4ty52"]
-[ext_resource type="Texture2D" uid="uid://dlpkm3p5b6f5b" path="res://graphics/maps/Map.png" id="9_qmqw7"]
+[ext_resource type="Texture2D" uid="uid://fsphbueemovh" path="res://graphics/maps/Map.png" id="9_qmqw7"]
 [ext_resource type="PackedScene" uid="uid://cto1xlkr5nxxd" path="res://scenes/game/projectiles.tscn" id="10_6n2ns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbl8p"]
+size = Vector2(38, 1011)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohyjs"]
+size = Vector2(1471, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmsoa"]
+size = Vector2(25, 1006)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tquu"]
+size = Vector2(1519, 29)
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_objyc")
@@ -39,3 +51,34 @@ script = ExtResource("5_phjcr")
 [node name="Sprite2D" type="Sprite2D" parent="Map"]
 z_index = -11
 texture = ExtResource("9_qmqw7")
+
+[node name="LeftEdge" type="CharacterBody2D" parent="."]
+position = Vector2(-755, -4)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftEdge"]
+position = Vector2(8, -3.5)
+shape = SubResource("RectangleShape2D_rbl8p")
+
+[node name="TopEdge" type="CharacterBody2D" parent="."]
+position = Vector2(-3, -513)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopEdge"]
+position = Vector2(13.5, 4.5)
+shape = SubResource("RectangleShape2D_ohyjs")
+
+[node name="RightEdge" type="CharacterBody2D" parent="."]
+position = Vector2(750, -7)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightEdge"]
+position = Vector2(1.5, 7)
+shape = SubResource("RectangleShape2D_dmsoa")
+
+[node name="BottomEdge" type="CharacterBody2D" parent="."]
+position = Vector2(0, 498)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomEdge"]
+position = Vector2(-2, 5)
+shape = SubResource("RectangleShape2D_7tquu")
