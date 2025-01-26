@@ -50,9 +50,11 @@ const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_b
 const bubble_shooter_template = preload("res://scenes/game/weapons/bubble_shooter.tscn")
 const bath_bomb_launcher_template = preload("res://scenes/game/weapons/bath_bomb_launcher.tscn")
 const scatter_shot_template = preload("res://scenes/game/weapons/scatter_shot.tscn")
+const beam_weapon_template = preload("res://scenes/game/weapons/beam_weapon.tscn")
+
 # This has to match the order of our weapons enum:
 var weapon_templates = [bubble_shooter_template,
-	bath_bomb_launcher_template, scatter_shot_template]
+	bath_bomb_launcher_template, scatter_shot_template, beam_weapon_template]
 
 var basicStarterWeapon: Weapon
 var weapons: Array[Weapon] = [null, null, null, null, null, null]
@@ -128,6 +130,7 @@ func firstFreeWeaponsSlot() -> int:
 #region Power-Ups
 
 func on_powerup_collide(item : PowerUp.Types):
+	AudioController.play_bubbleup()
 	match item:
 		PowerUp.Types.SPEEDUP:
 			activateSpeedup()
@@ -169,8 +172,10 @@ func activateSoap():
 #endregion
 
 func take_damage(damage):
+	AudioController.play_mudhit()
 	if !isSoap:
 		hp = clamp(hp - damage, 0, maxHP)
+		print("hp is ", hp)
 	HPBar.value = hp
 	
 #region Levelling
@@ -211,8 +216,8 @@ func choose_weapon(weapon : Weapon.Types) -> void:
 
 func collisionWithEnemy(body: Node2D) -> void:
 	if isSoap:
-		body.take_damage(body.strength)
+		body.take_damage(100)
 	else:
 		var toBody = body.position - position
 		body.position = body.position + toBody
-		take_damage(5)
+		take_damage(body.strength)

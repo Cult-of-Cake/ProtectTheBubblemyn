@@ -9,12 +9,16 @@ class_name EnemyManager
 var enemy_template = preload("res://scenes/game/enemies/enemy_template.tscn")
 
 var enemy_splugey = preload("res://scenes/game/enemies/splugey.tscn")
+var enemy_salmonillo = preload("res://scenes/game/enemies/Salmonillo.tscn")
+var enemy_clodmucker = preload("res://scenes/game/enemies/Clodmucker.tscn")
 
 var intensity = 0
 
 var temp_rate = 0
 
 var splug_rate = 0
+var salm_rate = 0
+var clod_rate = 0
 
 
 var kill_count = [0, 0]
@@ -34,7 +38,16 @@ func on_spawn_timer() -> void:
 		if splug_rate == 5:
 			enemySpawn(enemy_splugey)
 			splug_rate = 0
-			
+		
+		salm_rate += 1
+		if salm_rate >= 5:
+			enemySpawn(enemy_salmonillo)
+			salm_rate = 0
+		
+		clod_rate += 1
+		if clod_rate >= 5:
+			enemySpawn(enemy_clodmucker)
+			clod_rate = 0
 	
 func on_intensity_timer() -> void:
 	intensity += 1
@@ -56,11 +69,12 @@ func _process(delta: float) -> void:
 
 
 func on_enemy_died(enemy : Enemy) -> void:
+	AudioController.play_bubblehit()
 	var id_num = enemy.uid
 	var id_string = enemy.enemy_id
 	kill_count[id_num] += 1
-	if kill_count[id_num] >= 2:
-		UserSettings.UNLOCKED_BUBBLEDEX_ENTRIES.append(id_string)
-		bubbledex.rebuild_bubbledex()
-		print(id_string)
+	if kill_count[id_num] >= 10:
+		if not id_string in UserSettings.UNLOCKED_BUBBLEDEX_ENTRIES:
+			UserSettings.UNLOCKED_BUBBLEDEX_ENTRIES.append(id_string)
+			bubbledex.rebuild_bubbledex()
 	player.on_enemy_killed(enemy)
