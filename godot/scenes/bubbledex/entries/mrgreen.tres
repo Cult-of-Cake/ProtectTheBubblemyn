@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Bubbledex_Entry" load_steps=3 format=3 uid="uid://detmu8e1gv3mk"]
+
+[ext_resource type="Texture2D" uid="uid://iiteumj4q4xv" path="res://graphics/bubbledex/mrgreen.png" id="1_nquxc"]
+[ext_resource type="Script" path="res://scenes/bubbledex/bubbledex_entry.gd" id="2_7km1a"]
+
+[resource]
+script = ExtResource("2_7km1a")
+entry_name = "Mr. Green!"
+id = "mrgreen"
+image = ExtResource("1_nquxc")
+description = "Protects you from grime attacks for a period of time. Do not get in eyes, on skin, or on clothing."

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct34g0a5m07qs"]
+
+[ext_resource type="Script" path="res://code/weapons/BubbleShooter.gd" id="1_dpc1u"]
+
+[node name="BubbleShooter" type="Sprite2D"]
+script = ExtResource("1_dpc1u")
+
+[node name="ProjectileSpawnPosition" type="Node2D" parent="."]
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_shoot"]
