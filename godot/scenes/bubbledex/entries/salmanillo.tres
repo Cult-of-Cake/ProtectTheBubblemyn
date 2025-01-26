@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Bubbledex_Entry" load_steps=3 format=3 uid="uid://dtt2m85rqnb0i"]
+
+[ext_resource type="Texture2D" uid="uid://sq65gpqtih25" path="res://graphics/bubbledex/Salmanillo.png" id="1_37hkg"]
+[ext_resource type="Script" path="res://scenes/bubbledex/bubbledex_entry.gd" id="2_ruba1"]
+
+[resource]
+script = ExtResource("2_ruba1")
+entry_name = "Salmonillo"
+id = "salmonillo"
+image = ExtResource("1_37hkg")
+description = "These rose up from the factory waste and started to spread outward. They may be weak, but they spread the infection that mutated everything around them."

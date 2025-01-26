@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://jyv4g54adkmo"]
+[gd_scene load_steps=5 format=3 uid="uid://jyv4g54adkmo"]
 
 [ext_resource type="Script" path="res://ui/overlays/pause_overlay.gd" id="1_q2yda"]
+[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="2_2a5d5"]
 [ext_resource type="PackedScene" uid="uid://cwerlytfystbt" path="res://scenes/bubbledex/bubbledex.tscn" id="2_n2noc"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_wxvon"]
 
 [node name="PauseOverlay" type="Control"]
 layout_mode = 3
@@ -11,6 +14,54 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q2yda")
+
+[node name="WeaponChooser" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="CenterContainer" type="CenterContainer" parent="WeaponChooser"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 550.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WeaponChooser/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WeaponChooser/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Choose your Weapon!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WeaponChooser/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="NewWeapon1" type="TextureButton" parent="WeaponChooser/CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture_normal = ExtResource("2_2a5d5")
+texture_hover = SubResource("ImageTexture_wxvon")
+stretch_mode = 0
+
+[node name="NewWeapon2" type="TextureButton" parent="WeaponChooser/CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture_normal = ExtResource("2_2a5d5")
+stretch_mode = 0
+
+[node name="NewWeapon3" type="TextureButton" parent="WeaponChooser/CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture_normal = ExtResource("2_2a5d5")
+stretch_mode = 0
 
 [node name="BubbledexContainer" type="Control" parent="."]
 unique_name_in_owner = true
@@ -26,8 +77,9 @@ anchors_preset = 0
 [node name="ExitBubbledex" type="Button" parent="BubbledexContainer"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_top = 670.0
-offset_right = 256.0
+offset_left = 10.0
+offset_top = 675.0
+offset_right = 310.0
 offset_bottom = 710.0
 text = "Exit Bubbledex"
 
@@ -59,12 +111,12 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "resume_game"
 
-[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "leave_game"
-
 [node name="BubbledexButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Bubbledex"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "leave_game"

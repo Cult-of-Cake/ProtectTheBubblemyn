@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Bubbledex_Entry" load_steps=3 format=3 uid="uid://djqa8kv1yih1q"]
 
+[ext_resource type="Texture2D" uid="uid://b0w778hu3wrrd" path="res://graphics/bubbledex/toxidrop.png" id="1_as6p8"]
 [ext_resource type="Script" path="res://scenes/bubbledex/bubbledex_entry.gd" id="1_gg1m8"]
-[ext_resource type="Texture2D" uid="uid://cdcecbtc4lvcv" path="res://graphics/bubbledex/green.png" id="1_y3h53"]
 
 [resource]
 script = ExtResource("1_gg1m8")
 entry_name = "Toxidrop"
 id = "basic_range"
-image = ExtResource("1_y3h53")
+image = ExtResource("1_as6p8")
 description = "These rose up from the factory waste and started to spread outward. They may be weak, but they spread the infection that mutated everything around them."
