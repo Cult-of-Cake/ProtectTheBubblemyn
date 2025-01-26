@@ -11,6 +11,7 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_66tn5")
 enemy_id = "basic_range"
+current_health = 1
 strength = 3.0
 xp_worth = 2
 

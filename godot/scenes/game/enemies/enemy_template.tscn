@@ -12,6 +12,7 @@ scale = Vector2(0.34693, 0.390504)
 collision_layer = 2
 script = ExtResource("1_5pwve")
 enemy_id = "basic_melee"
+current_health = 1
 strength = 2.0
 speed = 5.0
 path = 2
