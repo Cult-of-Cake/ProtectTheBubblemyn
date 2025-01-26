@@ -59,7 +59,6 @@ func _ready():
 	
 	# instantiate single basic weapon in first slot
 	# TODO - TESTING
-	#addWeaponToSlot(0, basic_bubble_shooter_template)
 	#addWeaponToSlot(0, bath_bomb_launcher_template)
 	
 	#this should ultimately all get triggered from somewhere else
