@@ -13,27 +13,27 @@ var new_game = true
 func _ready() -> void:
 	overlay.visible = true
 	new_game_button.disabled = game_scene == null
-	continue_button.visible = SaveGame.has_save() and SaveGame.ENABLED
+	#continue_button.visible = SaveGame.has_save() and SaveGame.ENABLED
 	
 	# connect signals
 	new_game_button.pressed.connect(_on_play_button_pressed)
-	continue_button.pressed.connect(_on_continue_button_pressed)
+	#continue_button.pressed.connect(_on_continue_button_pressed)
 	exit_button.pressed.connect(_on_exit_button_pressed)
 	overlay.on_complete_fade_out.connect(_on_fade_overlay_on_complete_fade_out)
 	
-	if continue_button.visible:
-		continue_button.grab_focus()
-	else:
-		new_game_button.grab_focus()
+	#if continue_button.visible:
+	#	continue_button.grab_focus()
+	#else:
+	#	new_game_button.grab_focus()
 	
 func _on_play_button_pressed() -> void:
 	next_scene = game_scene
 	overlay.fade_out()
 	
-func _on_continue_button_pressed() -> void:
-	new_game = false
-	next_scene = game_scene
-	overlay.fade_out()
+#func _on_continue_button_pressed() -> void:
+#	new_game = false
+#	next_scene = game_scene
+#	overlay.fade_out()
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
