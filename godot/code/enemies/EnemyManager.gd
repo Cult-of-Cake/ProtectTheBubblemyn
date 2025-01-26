@@ -3,6 +3,7 @@ class_name EnemyManager
 
 
 @onready var enemySpawner = $enemyTrack/enemySpawn
+@onready var player : Player = get_node("../Player/Player")
 #const enemy_template = preload("res://scenes/game/enemies/enemy_template.tscn")
 var enemy_template = preload("res://scenes/game/enemies/splugey.tscn")
 
@@ -27,8 +28,10 @@ func _process(delta: float) -> void:
 	pass
 
 
-func on_enemy_died(id_string) -> void:
-	var id_num = 0 # TODO: This is hard-coded! Loop through and match
+func on_enemy_died(enemy : Enemy) -> void:
+	var id_num = enemy.uid
+	var id_string = enemy.enemy_id
 	kill_count[id_num] += 1
 	if kill_count[id_num] >= 10:
 		UserSettings.UNLOCKED_BUBBLEDEX_ENTRIES.append(id_string)
+	player.on_enemy_killed(enemy)

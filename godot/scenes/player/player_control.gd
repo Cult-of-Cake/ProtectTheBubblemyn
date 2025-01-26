@@ -118,5 +118,10 @@ func take_damage(damage):
 	hp = hp - damage
 	HPBar.value = hp
 	
-
+#region Levelling
+var current_xp : int = 0
+func on_enemy_killed(enemy : Enemy) -> void:
+	current_xp += enemy.xp_worth
 	
+
+#endregion

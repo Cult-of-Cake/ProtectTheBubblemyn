@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxiycqon4dhca"]
+[gd_scene load_steps=4 format=3 uid="uid://dtg4we8puij2i"]
 
 [ext_resource type="Script" path="res://code/enemies/splugey.gd" id="1_66tn5"]
 [ext_resource type="Texture2D" uid="uid://bch2q0ltcs1on" path="res://graphics/beast_placeholder.png" id="2_pon4y"]
@@ -11,6 +11,7 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_66tn5")
 enemy_id = "basic_range"
+uid = 1
 current_health = 1
 strength = 3.0
 xp_worth = 2
