@@ -12,6 +12,7 @@ signal game_exited
 @onready var weapon_buttons = [%NewWeapon1,%NewWeapon2,%NewWeapon3]
 @onready var globals = get_node("/root/UserSettings") 
 @onready var base_weapon_list  = globals.WEAPON_TYPES.keys() 
+@onready var player : Player = get_node("/root/IngameScene/Map/Player/Player")
 
 
 var selected_weapons
@@ -27,6 +28,9 @@ func _ready() -> void:
 	print(selected_weapons)
 	select_weapon_set()
 	print(selected_weapons)
+	# Update button labels
+	for i in range(0, 3):
+		weapon_buttons[i].get_node("Label").text = selected_weapons[i]
 
 func select_weapon_set() -> void:
 	var weapon_list = base_weapon_list.duplicate()
@@ -55,9 +59,14 @@ func _exit_bubbledex() -> void:
 	pause_menu_container.visible = true
 
 
-	
-	
+
 func _unhandled_input(event):
 	if event.is_action_pressed("pause") and visible:
 		get_viewport().set_input_as_handled()
 		_resume()
+
+
+func on_weapon_picked(button : int) -> void:
+	var chosen = selected_weapons[button]
+	print("button ", button, " chosen ", chosen)
+	player.choose_weapon(globals.WEAPON_TYPES[chosen])
