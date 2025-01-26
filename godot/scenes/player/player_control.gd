@@ -47,10 +47,11 @@ const weapon_slot_orientations: Array[Vector2] = [ \
 ]
 
 const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_bubble_shooter.tscn")
+const bubble_shooter_template = preload("res://scenes/game/weapons/bubble_shooter.tscn")
 const bath_bomb_launcher_template = preload("res://scenes/game/weapons/bath_bomb_launcher.tscn")
 const scatter_shot_template = preload("res://scenes/game/weapons/scatter_shot.tscn")
 # This has to match the order of our weapons enum:
-var weapon_templates = [basic_bubble_shooter_template,
+var weapon_templates = [bubble_shooter_template,
 	bath_bomb_launcher_template, scatter_shot_template]
 
 var basicStarterWeapon: Weapon
@@ -173,11 +174,16 @@ func take_damage(damage):
 	HPBar.value = hp
 	
 #region Levelling
+var milestones = [5, 10, 20, 40, 65, 100]
+var hit = [false, false, false, false, false]
+
 var current_xp : int = 0
 func on_enemy_killed(enemy : Enemy) -> void:
 	current_xp += enemy.xp_worth
-	if [1, 5, 20, 40, 100].has(current_xp):
-		offer_weapon_screen()
+	for i in range(0, 5):
+		if !hit[i] and current_xp >= milestones[i]:
+			hit[i] = true
+			offer_weapon_screen()
 
 func offer_weapon_screen() -> void:
 	# Pause
