@@ -31,9 +31,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var direction = global_position.direction_to(goal_position)
-	velocity = direction * speed * 5
-	move_and_slide()
+	if !(path == pathOptions.STAND):
+		var direction = global_position.direction_to(goal_position)
+		velocity = direction * speed * 5
+		move_and_slide()
 
 func take_damage(damage: int) -> void:
 	queue_free()

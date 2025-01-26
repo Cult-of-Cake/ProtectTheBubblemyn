@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
+var isPlayer = true
 
 const SPEED = 150.0
 const HIGHSPEED = 450.0
@@ -112,5 +113,10 @@ func activateSpeedup():
 	speedup = false
 	
 #endregion
+
+func take_damage(damage):
+	hp = hp - damage
+	HPBar.value = hp
+	
 
 	
