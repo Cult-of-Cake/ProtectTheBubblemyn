@@ -124,6 +124,9 @@ func on_powerup_collide(item : PowerUp.Types):
 			activateSpeedup()
 		PowerUp.Types.INVINCIBLE:
 			activateSoap()
+		PowerUp.Types.HEAL:
+			hp = clamp(hp + maxHP * 0.1, 0, maxHP)
+			HPBar.value = hp
 
 func activateSpeedup():
 	speedup = true
@@ -158,7 +161,7 @@ func activateSoap():
 #endregion
 
 func take_damage(damage):
-	hp = hp - damage
+	hp = clamp(hp - damage, 0, maxHP)
 	HPBar.value = hp
 	
 #region Levelling
