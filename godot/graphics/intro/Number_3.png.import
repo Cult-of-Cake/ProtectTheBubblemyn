@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cafbmosk27po"
-path="res://.godot/imported/Beauitiful_home.png-cf7c7be0d36b4f007332829c54f0b596.ctex"
+uid="uid://debqrhslc1dah"
+path="res://.godot/imported/Number_3.png-8e9b885579ffad0487f38caaa1f363d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/intro/Beauitiful_home.png"
-dest_files=["res://.godot/imported/Beauitiful_home.png-cf7c7be0d36b4f007332829c54f0b596.ctex"]
+source_file="res://graphics/intro/Number_3.png"
+dest_files=["res://.godot/imported/Number_3.png-8e9b885579ffad0487f38caaa1f363d3.ctex"]
 
 [params]
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbdikbp8codqe"]
+[gd_scene load_steps=2 format=3 uid="uid://uq1oh07r108n"]
 
-[ext_resource type="Texture2D" uid="uid://cafbmosk27po" path="res://graphics/intro/Beauitiful_home.png" id="1_ameok"]
+[ext_resource type="Texture2D" uid="uid://b2fafas8ategg" path="res://graphics/intro/Number_4.png" id="1_qjbon"]
 
-[node name="GodotLogo" type="Node2D"]
+[node name="GodotLogo3" type="Node2D"]
 
 [node name="TestSlide" type="Sprite2D" parent="."]
-texture = ExtResource("1_ameok")
+rotation = -0.00122596
+texture = ExtResource("1_qjbon")

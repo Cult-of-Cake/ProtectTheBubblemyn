@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://citewta3f8cil"]
+[gd_scene load_steps=2 format=3 uid="uid://dux0ne11n4m7x"]
 
-[ext_resource type="Texture2D" uid="uid://cafbmosk27po" path="res://graphics/intro/Beauitiful_home.png" id="1_rddda"]
+[ext_resource type="Texture2D" uid="uid://b2fafas8ategg" path="res://graphics/intro/Number_4.png" id="1_frhe1"]
 
 [node name="GodotLogo" type="Node2D"]
 
 [node name="TestSlide" type="Sprite2D" parent="."]
-texture = ExtResource("1_rddda")
+texture = ExtResource("1_frhe1")

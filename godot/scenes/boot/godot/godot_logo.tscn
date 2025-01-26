@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bxfwf62h7ltrg" path="res://graphics/intro/cultofcake.png" id="1_atvba"]
 
-[node name="GodotLogo" type="Node2D"]
+[node name="GodotLogo2" type="Node2D"]
 
 [node name="TestSlide" type="Sprite2D" parent="."]
 texture = ExtResource("1_atvba")

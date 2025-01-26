@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://udmg1cv2etjb"]
+[gd_scene load_steps=5 format=3 uid="uid://hwlgamd6b6gv"]
 
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="1_50c01"]
 [ext_resource type="PackedScene" uid="uid://ehrvsjvp61gu" path="res://scenes/boot/bootsplash_scene.tscn" id="2_hjlnx"]
-[ext_resource type="PackedScene" uid="uid://1un532c8f81r" path="res://scenes/boot/godot/slide3content.tscn" id="3_dgs61"]
-[ext_resource type="PackedScene" uid="uid://d1ecl8o0wky3r" path="res://scenes/boot/godot/slide_4.tscn" id="4_htjkh"]
+[ext_resource type="PackedScene" uid="uid://bg5w4ah24iw7a" path="res://scenes/boot/godot/slide3content.tscn" id="3_dgs61"]
+[ext_resource type="PackedScene" uid="uid://dn7uehdqhumru" path="res://scenes/boot/godot/slide_4.tscn" id="4_htjkh"]
 
-[node name="GodotBootsplashScene" type="Control"]
+[node name="GodotBootsplashScene2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
