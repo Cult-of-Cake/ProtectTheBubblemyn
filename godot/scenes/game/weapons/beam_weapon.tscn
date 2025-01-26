@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://kcoskj15ldbi"]
+
+[ext_resource type="Script" path="res://code/projectiles/BeamWeapon.gd" id="1_wyyio"]
+
+[node name="BeamWeapon" type="Sprite2D"]
+script = ExtResource("1_wyyio")
