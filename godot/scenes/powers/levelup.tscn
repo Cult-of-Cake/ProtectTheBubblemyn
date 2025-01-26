@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwdasa7gugu24"]
+
+[sub_resource type="Gradient" id="Gradient_2kwa5"]
+offsets = PackedFloat32Array(0, 0.550769, 1)
+colors = PackedColorArray(0, 0, 0, 1, 2.26215e-06, 0.491631, 0.612921, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f835p"]
+gradient = SubResource("Gradient_2kwa5")
+width = 1
+
+[node name="Levelup" type="Node2D"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 765.0
+offset_bottom = 421.0
+
+[node name="Option" type="Node2D" parent="HBoxContainer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/Option"]
+scale = Vector2(280, 360)
+texture = SubResource("GradientTexture1D_f835p")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/Option/Sprite2D"]
+position = Vector2(20, 20)
+scale = Vector2(240, 320)
+texture = SubResource("GradientTexture1D_f835p")
+centered = false
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Option"]
+offset_right = 340.0
+offset_bottom = 440.0
