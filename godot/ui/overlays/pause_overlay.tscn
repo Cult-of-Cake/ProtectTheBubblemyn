@@ -59,12 +59,12 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "resume_game"
 
-[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "leave_game"
-
 [node name="BubbledexButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Bubbledex"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "leave_game"
