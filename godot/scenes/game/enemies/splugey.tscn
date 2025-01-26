@@ -1,7 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtg4we8puij2i"]
+[gd_scene load_steps=6 format=3 uid="uid://dtg4we8puij2i"]
 
 [ext_resource type="Script" path="res://code/enemies/splugey.gd" id="1_66tn5"]
-[ext_resource type="Texture2D" uid="uid://bch2q0ltcs1on" path="res://graphics/beast_placeholder.png" id="2_pon4y"]
+[ext_resource type="Texture2D" uid="uid://cjp4tpaiwaall" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_1.png" id="2_8lviy"]
+[ext_resource type="Texture2D" uid="uid://c1y23ltbyknul" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_2.png" id="3_rgs0d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ekhp8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8lviy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rgs0d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ho2m"]
 radius = 24.0
@@ -16,9 +31,10 @@ current_health = 1
 strength = 3.0
 xp_worth = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.7, 0.692808)
-texture = ExtResource("2_pon4y")
+sprite_frames = SubResource("SpriteFrames_ekhp8")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1ho2m")
