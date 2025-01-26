@@ -76,7 +76,7 @@ radius = 19.0263
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 8
+collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_43hhl")
 
@@ -114,6 +114,11 @@ texture = ExtResource("10_5hyy2")
 shape = SubResource("CircleShape2D_xa6j8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -750
+limit_top = -500
+limit_right = 750
+limit_bottom = 500
+limit_smoothed = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 

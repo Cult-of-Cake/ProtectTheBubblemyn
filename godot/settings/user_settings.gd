@@ -36,7 +36,7 @@ var config:ConfigFile
 func _ready():
 	config = ConfigFile.new()
 	config.load(SETTINGS_FILE)
-	UNLOCKED_BUBBLEDEX_ENTRIES = ["bubblemyn"]
+	UNLOCKED_BUBBLEDEX_ENTRIES = ["bubblemyn", "soap", "mrgreen", "brush"]
 	WEAPON_TYPES = Weapon.new().Types
 	_configure_audio()
 	_configure_language()

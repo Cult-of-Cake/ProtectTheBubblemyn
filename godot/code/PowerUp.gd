@@ -2,7 +2,7 @@ extends Node2D
 class_name PowerUp
 
 enum Types { SPEEDUP, INVINCIBLE, HEAL, ENUM_SIZE }
-var icon_name = [ "maid_hat", "soap", "heal" ]
+var icon_name = [ "soap", "mr_green", "heal" ]
 @export var type : Types
 
 # Called when the node enters the scene tree for the first time.

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Bubbledex_Entry" load_steps=3 format=3 uid="uid://d0oso0l1cof05"]
+
+[ext_resource type="Texture2D" uid="uid://bvgswi0fcd2os" path="res://graphics/bubbledex/dex_soap.png" id="1_kca3m"]
+[ext_resource type="Script" path="res://scenes/bubbledex/bubbledex_entry.gd" id="2_saxl7"]
+
+[resource]
+script = ExtResource("2_saxl7")
+entry_name = "Soap Bar"
+id = "soap"
+image = ExtResource("1_kca3m")
+description = " Pick this up and you’ll run faster. Use soap ‘til you squeak so you will not reek.
+"

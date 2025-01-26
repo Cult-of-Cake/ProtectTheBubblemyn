@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbdikbp8codqe"]
+
+[ext_resource type="Texture2D" uid="uid://cafbmosk27po" path="res://graphics/intro/Beauitiful_home.png" id="1_ameok"]
+
+[node name="GodotLogo" type="Node2D"]
+
+[node name="TestSlide" type="Sprite2D" parent="."]
+texture = ExtResource("1_ameok")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Bubbledex_Entry" load_steps=3 format=3 uid="uid://c3aiar18js852"]
+
+[ext_resource type="Texture2D" uid="uid://dx2kilduwyak" path="res://graphics/bubbledex/dex_brush.png" id="1_4uqmk"]
+[ext_resource type="Script" path="res://scenes/bubbledex/bubbledex_entry.gd" id="2_0rbm5"]
+
+[resource]
+script = ExtResource("2_0rbm5")
+entry_name = "Scrub Brush"
+id = "mrgreen"
+image = ExtResource("1_4uqmk")
+description = "Restores health when picked up. Scour off that grime!"
