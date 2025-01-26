@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dtrqach0bufxc" path="res://scenes/game/player.tscn" id="7_q486o"]
 [ext_resource type="PackedScene" uid="uid://c1h0sgpggfcnt" path="res://scenes/game/enemies/enemies.tscn" id="8_ufbwt"]
 [ext_resource type="PackedScene" uid="uid://bnjchehacjf" path="res://scenes/game/power_up.tscn" id="9_4ty52"]
-[ext_resource type="Texture2D" uid="uid://cn6fguur4725a" path="res://graphics/maps/Map.png" id="9_qmqw7"]
+[ext_resource type="Texture2D" uid="uid://dlpkm3p5b6f5b" path="res://graphics/maps/Map.png" id="9_qmqw7"]
 [ext_resource type="PackedScene" uid="uid://cto1xlkr5nxxd" path="res://scenes/game/projectiles.tscn" id="10_6n2ns"]
 
 [node name="IngameScene" type="Node2D"]

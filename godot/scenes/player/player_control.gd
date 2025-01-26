@@ -14,7 +14,9 @@ var hp
 #player state
 var speedup = false
 var speedupTimer
+var soapTimer
 var invincible = false
+var isSoap = false
 
 #weapons
 const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_bubble_shooter.tscn")
@@ -96,7 +98,7 @@ func on_powerup_collide(item : PowerUp.Types):
 		PowerUp.Types.SPEEDUP:
 			activateSpeedup()
 		PowerUp.Types.INVINCIBLE:
-			invincible = true
+			activateSoap()
 
 func activateSpeedup():
 	speedup = true
@@ -111,7 +113,23 @@ func activateSpeedup():
 		speedupTimer = get_tree().create_timer(10)
 	await speedupTimer.timeout
 	speedup = false
-	
+
+func activateSoap():
+	print("Activated!")
+	isSoap = true
+	get_node("Soapsprite").visible = true
+	var timeLeft
+	if is_instance_valid(soapTimer):
+		timeLeft = soapTimer.time_left
+	else:
+		timeLeft = 0
+	if(timeLeft > 0.1):
+		soapTimer.time_left = 10
+	else:
+		soapTimer = get_tree().create_timer(10, false)
+	await soapTimer.timeout
+	isSoap = false
+	get_node("Soapsprite").visible = false
 #endregion
 
 func take_damage(damage):
@@ -125,3 +143,12 @@ func on_enemy_killed(enemy : Enemy) -> void:
 	
 
 #endregion
+
+
+func collisionWithEnemy(body: Node2D) -> void:
+	if isSoap:
+		body.take_damage(100)
+	else:
+		var toBody = body.position - position
+		body.position = body.position + toBody
+		take_damage(5)
