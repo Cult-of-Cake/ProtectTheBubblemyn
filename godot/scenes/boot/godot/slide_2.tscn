@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="1_2xnur"]
 [ext_resource type="PackedScene" uid="uid://ehrvsjvp61gu" path="res://scenes/boot/bootsplash_scene.tscn" id="2_rtg58"]
 [ext_resource type="PackedScene" uid="uid://c1evft2jjgf7a" path="res://scenes/boot/godot/slide2content.tscn" id="3_rrcl1"]
-[ext_resource type="PackedScene" uid="uid://dv2y18ye8j7o0" path="res://scenes/main_menu_scene.tscn" id="4_ossfh"]
+[ext_resource type="PackedScene" uid="uid://udmg1cv2etjb" path="res://scenes/boot/godot/slide_3.tscn" id="4_fe0pb"]
 
 [node name="GodotBootsplashScene" type="Control"]
 layout_mode = 3
@@ -18,4 +18,4 @@ theme = ExtResource("1_2xnur")
 layout_mode = 1
 theme = ExtResource("1_2xnur")
 node = ExtResource("3_rrcl1")
-next_scene = ExtResource("4_ossfh")
+next_scene = ExtResource("4_fe0pb")
