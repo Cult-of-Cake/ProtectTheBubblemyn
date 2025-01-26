@@ -23,19 +23,15 @@ func _ready() -> void:
 	bubbledex_button.pressed.connect(_bubbledex)
 	exit_bubbledex_button.pressed.connect(_exit_bubbledex)
 	select_weapon_set()
-	print(selected_weapons)
-	select_weapon_set()
-	print(selected_weapons)
-	select_weapon_set()
-	print(selected_weapons)
-	# Update button labels
-	for i in range(0, 3):
-		weapon_buttons[i].get_node("Label").text = selected_weapons[i]
 
 func select_weapon_set() -> void:
 	var weapon_list = base_weapon_list.duplicate()
 	weapon_list.shuffle()
 	selected_weapons = weapon_list.slice(0, 3)
+	print(selected_weapons)
+	# Update button labels
+	for i in range(0, 3):
+		weapon_buttons[i].get_node("Label").text = selected_weapons[i]
 	
 	
 func grab_button_focus() -> void:
