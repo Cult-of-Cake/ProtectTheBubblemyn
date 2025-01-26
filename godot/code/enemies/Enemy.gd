@@ -6,6 +6,7 @@ enum pathOptions { STAND, WANDER, MOVE_TO_PLAYER }
 var isEnemy : bool = true
 
 @export var enemy_id : String
+@export var uid : int
 @export var current_health : int
 @export var strength : float
 @export var speed : float
@@ -44,5 +45,5 @@ func take_damage(damage: int) -> void:
 		die()
 	
 func die() -> void:
-	died.emit(enemy_id)
+	died.emit(self)
 	queue_free()

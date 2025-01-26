@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://m0tjv2u2obq2"]
+[gd_scene load_steps=4 format=3 uid="uid://b4m61wlfkkmqj"]
 
 [ext_resource type="Script" path="res://code/enemies/Enemy.gd" id="1_5pwve"]
 [ext_resource type="Texture2D" uid="uid://bch2q0ltcs1on" path="res://graphics/beast_placeholder.png" id="2_lin4m"]
@@ -16,6 +16,7 @@ current_health = 1
 strength = 2.0
 speed = 5.0
 path = 2
+xp_worth = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_lin4m")

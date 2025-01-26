@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cimplldinodk3"]
+[gd_scene load_steps=3 format=3 uid="uid://c1h0sgpggfcnt"]
 
 [ext_resource type="Script" path="res://code/enemies/EnemyManager.gd" id="1_7w7v3"]
 
