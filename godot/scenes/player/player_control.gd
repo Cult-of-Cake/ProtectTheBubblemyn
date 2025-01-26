@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var pause_overlay = get_node("/root/IngameScene/UI/PauseOverlay")
+
 var isPlayer = true
 
 const SPEED = 150.0
@@ -45,9 +47,14 @@ const weapon_slot_orientations: Array[Vector2] = [ \
 ]
 
 const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_bubble_shooter.tscn")
+const bubble_shooter_template = preload("res://scenes/game/weapons/bubble_shooter.tscn")
 const bath_bomb_launcher_template = preload("res://scenes/game/weapons/bath_bomb_launcher.tscn")
 const scatter_shot_template = preload("res://scenes/game/weapons/scatter_shot.tscn")
 const beam_weapon_template = preload("res://scenes/game/weapons/beam_weapon.tscn")
+
+# This has to match the order of our weapons enum:
+var weapon_templates = [bubble_shooter_template,
+	bath_bomb_launcher_template, scatter_shot_template, beam_weapon_template]
 
 var basicStarterWeapon: Weapon
 var weapons: Array[Weapon] = [null, null, null, null, null, null]
@@ -67,12 +74,6 @@ func _ready():
 	# Basic weapon shoots from the centre of the player creature
 	basicStarterWeapon.position = Vector2(0.0, 0.0)
 	
-	# TODO - TESTING
-	addWeaponToSlot(0, bath_bomb_launcher_template)
-	
-	#this should ultimately all get triggered from somewhere else
-	#await get_tree().create_timer(5).timeout
-	#activateSpeedup()
 
 func _physics_process(delta: float) -> void:
 	
@@ -178,10 +179,37 @@ func take_damage(damage):
 	HPBar.value = hp
 	
 #region Levelling
+var milestones = [5, 10, 20, 40, 65, 100]
+var hit = [false, false, false, false, false]
+
 var current_xp : int = 0
 func on_enemy_killed(enemy : Enemy) -> void:
 	current_xp += enemy.xp_worth
-	
+	for i in range(0, 5):
+		if !hit[i] and current_xp >= milestones[i]:
+			hit[i] = true
+			offer_weapon_screen()
+
+func offer_weapon_screen() -> void:
+	# Pause
+	get_viewport().set_input_as_handled()
+	get_tree().paused = true
+	pause_overlay.grab_button_focus()
+	# Show weapon chooser
+	pause_overlay.show()
+	pause_overlay.get_node("CenterContainer").hide()
+	pause_overlay.get_node("WeaponChooser").show()
+
+func choose_weapon(weapon : Weapon.Types) -> void:
+	pause_overlay.get_node("WeaponChooser").hide()
+	pause_overlay.get_node("CenterContainer").show()
+	# Unpause
+	get_viewport().set_input_as_handled()
+	get_tree().paused = false
+	pause_overlay.hide()
+	# Add weapon
+	print(weapon_templates[weapon])
+	addWeaponToSlot(firstFreeWeaponsSlot(), weapon_templates[weapon])
 
 #endregion
 
