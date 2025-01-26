@@ -13,6 +13,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 #This refers to a target, which must be set by whatever created this before this scene is added as a child
 func _ready():
 	velocity = position.direction_to(target)
+	look_at(target)
 	await get_tree().create_timer(bulletLifespan).timeout
 	queue_free()
 	
