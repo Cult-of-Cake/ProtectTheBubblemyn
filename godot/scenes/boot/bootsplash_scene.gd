@@ -2,7 +2,7 @@ class_name BootsplashScene
 extends Control
 
 @export var fade_duration:float = 2.0
-@export var stay_duration:float = 1.5
+@export var stay_duration:float = 4.0
 @export var node:PackedScene
 @export var next_scene:PackedScene
 @export var interuptable:bool = true
