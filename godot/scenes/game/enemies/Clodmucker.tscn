@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvf4vn3p2nsep"]
+
+[ext_resource type="Script" path="res://code/enemies/clodmucker.gd" id="1_tebhd"]
+[ext_resource type="Texture2D" uid="uid://dh68idraprvtj" path="res://graphics/sprites/clod/sprite_beast_clod_1.png" id="2_7eod4"]
+[ext_resource type="Texture2D" uid="uid://cnfe3bcf0qm5" path="res://graphics/sprites/clod/sprite_beast_clod_2.png" id="3_2gnen"]
+[ext_resource type="Texture2D" uid="uid://dlgai4wj43ngh" path="res://graphics/sprites/clod/sprite_beast_clod_3.png" id="4_4u3jl"]
+[ext_resource type="Texture2D" uid="uid://chusobn8pjoed" path="res://graphics/sprites/clod/sprite_beast_clod_4.png" id="5_a671u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cggq2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7eod4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2gnen")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_us2rj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4u3jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a671u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ndmv"]
+radius = 55.0818
+
+[node name="Clodmucker" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_tebhd")
+current_health = 2
+strength = 2.0
+xp_worth = 2
+
+[node name="StandSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_cggq2")
+autoplay = "default"
+
+[node name="ShootSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_us2rj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0ndmv")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_shoot"]

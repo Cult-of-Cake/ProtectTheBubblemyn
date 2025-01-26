@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtg4we8puij2i"]
+[gd_scene load_steps=15 format=3 uid="uid://dtg4we8puij2i"]
 
 [ext_resource type="Script" path="res://code/enemies/splugey.gd" id="1_66tn5"]
-[ext_resource type="Texture2D" uid="uid://b3dmm7hm2sypm" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_1.png" id="2_8lviy"]
-[ext_resource type="Texture2D" uid="uid://c0tcgygtwif2k" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_2.png" id="3_rgs0d"]
+[ext_resource type="Texture2D" uid="uid://cci0wr8as68vg" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_1.png" id="2_8lviy"]
+[ext_resource type="Texture2D" uid="uid://byu8gmhoxm8ai" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_2.png" id="3_rgs0d"]
+[ext_resource type="Texture2D" uid="uid://buxfnxcducb5" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_3.png" id="4_p8ytv"]
+[ext_resource type="Texture2D" uid="uid://ctgcw1e6oeob8" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_4.png" id="5_rndu2"]
+[ext_resource type="Texture2D" uid="uid://blnd5mecjkved" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_5.png" id="6_b0r3m"]
+[ext_resource type="Texture2D" uid="uid://bi40jkw1hrgi2" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_6.png" id="7_1xwxu"]
+[ext_resource type="Texture2D" uid="uid://b4gpmki8nupwm" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_7.png" id="8_hrj7l"]
+[ext_resource type="Texture2D" uid="uid://bmj1nkl1bfcb6" path="res://graphics/sprites/toxidrop/sprite_beast_toxidrop_8.png" id="9_ne7w2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ekhp8"]
 animations = [{
@@ -18,6 +24,48 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_o021r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p8ytv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rndu2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5alck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_b0r3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1xwxu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0bolt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hrj7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ne7w2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ho2m"]
 radius = 24.0
 
@@ -27,13 +75,32 @@ collision_mask = 0
 script = ExtResource("1_66tn5")
 enemy_id = "basic_range"
 uid = 1
-current_health = 1
+current_health = 3
 strength = 3.0
+path = 2
 xp_worth = 2
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Facing" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.7, 0.692808)
 sprite_frames = SubResource("SpriteFrames_ekhp8")
+autoplay = "default"
+
+[node name="Left" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_o021r")
+autoplay = "default"
+
+[node name="Right" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_5alck")
+autoplay = "default"
+
+[node name="Away" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_0bolt")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -41,9 +108,4 @@ shape = SubResource("CircleShape2D_1ho2m")
 
 [node name="MovementTimer" type="Timer" parent="."]
 
-[node name="AttackTimer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-
 [connection signal="timeout" from="MovementTimer" to="." method="set_goal_point"]
-[connection signal="timeout" from="AttackTimer" to="." method="_shoot"]
