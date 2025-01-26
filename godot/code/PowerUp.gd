@@ -1,8 +1,8 @@
 extends Node2D
 class_name PowerUp
 
-enum Types { SPEEDUP, INVINCIBLE, ENUM_SIZE }
-var icon_name = [ "maid_hat", "soap" ]
+enum Types { SPEEDUP, INVINCIBLE, HEAL, ENUM_SIZE }
+var icon_name = [ "maid_hat", "soap", "heal" ]
 @export var type : Types
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +16,5 @@ func _process(delta: float) -> void:
 	pass
 
 func on_collect(body : Player):
-	print("collided")
 	body.on_powerup_collide(type)
 	queue_free()

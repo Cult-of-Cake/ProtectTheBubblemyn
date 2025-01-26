@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fsphbueemovh"
-path="res://.godot/imported/Map.png-1a423342cf4a701a92317005d45a0d22.ctex"
+uid="uid://c1y23ltbyknul"
+path="res://.godot/imported/sprite_beast_toxidrop_2.png-5f7e9ecda99c5dc237cc21aef844ecb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/maps/Map.png"
-dest_files=["res://.godot/imported/Map.png-1a423342cf4a701a92317005d45a0d22.ctex"]
+source_file="res://graphics/sprites/sprite_beast_toxidrop_2.png"
+dest_files=["res://.godot/imported/sprite_beast_toxidrop_2.png-5f7e9ecda99c5dc237cc21aef844ecb2.ctex"]
 
 [params]
 

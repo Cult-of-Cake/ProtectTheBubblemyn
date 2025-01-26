@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fsphbueemovh"
-path="res://.godot/imported/Map.png-1a423342cf4a701a92317005d45a0d22.ctex"
+uid="uid://e3gthl3sonxs"
+path="res://.godot/imported/sprite_beast_salmonillo_3.png-8f3965e0df30914f8bfcc12e9f693020.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/maps/Map.png"
-dest_files=["res://.godot/imported/Map.png-1a423342cf4a701a92317005d45a0d22.ctex"]
+source_file="res://graphics/sprites/sprite_beast_salmonillo_3.png"
+dest_files=["res://.godot/imported/sprite_beast_salmonillo_3.png-8f3965e0df30914f8bfcc12e9f693020.ctex"]
 
 [params]
 

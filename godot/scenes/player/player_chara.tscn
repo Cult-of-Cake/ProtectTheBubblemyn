@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b4r8hovrus807"]
+[gd_scene load_steps=18 format=3 uid="uid://b4r8hovrus807"]
 
 [ext_resource type="Script" path="res://scenes/player/player_control.gd" id="1_43hhl"]
 [ext_resource type="Texture2D" uid="uid://dax1bog1q2wcc" path="res://graphics/sprites/sprite_character_suds_1.png" id="2_quj8m"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ouq6hnjv6s1" path="res://graphics/sprites/sprite_character_suds_7.png" id="8_pnkq2"]
 [ext_resource type="Texture2D" uid="uid://c0c00ijujd3yo" path="res://graphics/sprites/sprite_character_suds_8.png" id="9_gkfkh"]
 [ext_resource type="Texture2D" uid="uid://c3cwhudkn3vak" path="res://graphics/gray.png" id="10_3tatd"]
+[ext_resource type="Texture2D" uid="uid://bs4wokatpxsbi" path="res://graphics/Sudsy-Soap.png" id="10_5hyy2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2xqg3"]
 animations = [{
@@ -68,11 +69,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xa6j8"]
+radius = 15.0333
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qqquk"]
 radius = 19.0263
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 8
 motion_mode = 1
 script = ExtResource("1_43hhl")
 
@@ -100,6 +104,12 @@ scale = Vector2(0.266, 0.266)
 sprite_frames = SubResource("SpriteFrames_36gxu")
 autoplay = "default"
 
+[node name="Soapsprite" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("10_5hyy2")
+
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xa6j8")
 
@@ -118,3 +128,12 @@ texture_under = ExtResource("10_3tatd")
 texture_progress = ExtResource("10_3tatd")
 tint_under = Color(0.129558, 0.129558, 0.129558, 1)
 tint_progress = Color(0, 1, 0, 1)
+
+[node name="OuchieZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuchieZone"]
+shape = SubResource("CircleShape2D_qqquk")
+
+[connection signal="body_entered" from="OuchieZone" to="." method="collisionWithEnemy"]

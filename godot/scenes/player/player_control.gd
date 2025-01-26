@@ -14,7 +14,9 @@ var hp
 #player state
 var speedup = false
 var speedupTimer
+var soapTimer
 var invincible = false
+var isSoap = false
 
 #weapons
 const weapon_slot_rotations: Array[float] = [ \
@@ -55,13 +57,7 @@ func _ready():
 	HPBar.value = hp
 	
 	# instantiate single basic weapon in first slot
-	var n = 0
-	var newWeapon = basic_bubble_shooter_template.instantiate()
-	add_child(newWeapon)
-	newWeapon.rotation = weapon_slot_rotations[n]
-	newWeapon.position = weapon_slot_positions[n]
-	newWeapon.orientation = weapon_slot_orientations[n]
-	weapons[n] = newWeapon
+	addWeaponToSlot(0, basic_bubble_shooter_template)
 	
 	#this should ultimately all get triggered from somewhere else
 	#await get_tree().create_timer(5).timeout
@@ -104,6 +100,20 @@ func clearSprites():
 	get_node("Right").visible = false
 	get_node("Away").visible = false
 
+func addWeaponToSlot(slotIndex: int, weaponTemplate: Resource) -> void:
+	assert(slotIndex >= 0 && slotIndex < 6)
+	var newWeapon = weaponTemplate.instantiate()
+	add_child(newWeapon)
+	newWeapon.rotation = weapon_slot_rotations[slotIndex]
+	newWeapon.position = weapon_slot_positions[slotIndex]
+	newWeapon.orientation = weapon_slot_orientations[slotIndex]
+	weapons[slotIndex] = newWeapon
+func firstFreeWeaponsSlot() -> int:
+	for n in range(6):
+		if weapons[n] == null:
+			return n
+	return -1
+
 #region Power-Ups
 
 func on_powerup_collide(item : PowerUp.Types):
@@ -111,7 +121,10 @@ func on_powerup_collide(item : PowerUp.Types):
 		PowerUp.Types.SPEEDUP:
 			activateSpeedup()
 		PowerUp.Types.INVINCIBLE:
-			invincible = true
+			activateSoap()
+		PowerUp.Types.HEAL:
+			hp = clamp(hp + maxHP * 0.1, 0, maxHP)
+			HPBar.value = hp
 
 func activateSpeedup():
 	speedup = true
@@ -126,11 +139,27 @@ func activateSpeedup():
 		speedupTimer = get_tree().create_timer(10)
 	await speedupTimer.timeout
 	speedup = false
-	
+
+func activateSoap():
+	isSoap = true
+	get_node("Soapsprite").visible = true
+	var timeLeft
+	if is_instance_valid(soapTimer):
+		timeLeft = soapTimer.time_left
+	else:
+		timeLeft = 0
+	if(timeLeft > 0.1):
+		soapTimer.time_left = 10
+	else:
+		soapTimer = get_tree().create_timer(10, false)
+	await soapTimer.timeout
+	isSoap = false
+	get_node("Soapsprite").visible = false
 #endregion
 
 func take_damage(damage):
-	hp = hp - damage
+	if !isSoap:
+		hp = clamp(hp - damage, 0, maxHP)
 	HPBar.value = hp
 	
 #region Levelling
@@ -140,3 +169,12 @@ func on_enemy_killed(enemy : Enemy) -> void:
 	
 
 #endregion
+
+
+func collisionWithEnemy(body: Node2D) -> void:
+	if isSoap:
+		body.take_damage(body.strength)
+	else:
+		var toBody = body.position - position
+		body.position = body.position + toBody
+		take_damage(5)
