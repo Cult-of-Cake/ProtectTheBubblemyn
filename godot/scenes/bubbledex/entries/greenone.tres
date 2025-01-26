@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_gg1m8")
-entry_name = "Green One"
-id = "green_one"
+entry_name = "Toxidrop"
+id = "basic_range"
 image = ExtResource("1_y3h53")
-description = "It Green"
+description = "These rose up from the factory waste and started to spread outward. They may be weak, but they spread the infection that mutated everything around them."
