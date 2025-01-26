@@ -28,6 +28,8 @@ var USER_SETTING_DEFAULTS = {
 }
 
 var UNLOCKED_BUBBLEDEX_ENTRIES
+var WEAPON_TYPES
+
 
 var config:ConfigFile
 

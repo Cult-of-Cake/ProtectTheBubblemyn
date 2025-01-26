@@ -27,8 +27,7 @@ func set_goal_point() -> void:
 			$MovementTimer.wait_time = randf_range(1, 2.5)
 		pathOptions.MOVE_TO_PLAYER:
 			goal_position = get_parent().get_parent().get_node("Player").get_node("Player").position
-	var direction = get_direction()
-	choose_sprite(direction)
+	set_facing()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if path != pathOptions.STAND:
@@ -45,7 +44,11 @@ func take_damage(damage: int) -> void:
 	current_health -= damage
 	if current_health < 0:
 		die()
-
+func set_facing():
+	await get_tree().create_timer(0.1).timeout
+	var direction = get_direction()
+	choose_sprite(direction)
+	
 func get_direction():
 	var direction
 	if abs(velocity.x) > abs (velocity.y):

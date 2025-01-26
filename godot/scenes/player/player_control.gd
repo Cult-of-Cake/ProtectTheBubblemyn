@@ -46,6 +46,8 @@ const weapon_slot_orientations: Array[Vector2] = [ \
 
 const basic_bubble_shooter_template = preload("res://scenes/game/weapons/basic_bubble_shooter.tscn")
 const bath_bomb_launcher_template = preload("res://scenes/game/weapons/bath_bomb_launcher.tscn")
+const scatter_shot_template = preload("res://scenes/game/weapons/scatter_shot.tscn")
+
 var basicStarterWeapon: Weapon
 var weapons: Array[Weapon] = [null, null, null, null, null, null]
 
@@ -169,6 +171,7 @@ func activateSoap():
 func take_damage(damage):
 	if !isSoap:
 		hp = clamp(hp - damage, 0, maxHP)
+		print("hp is ", hp)
 	HPBar.value = hp
 	
 #region Levelling
@@ -182,8 +185,8 @@ func on_enemy_killed(enemy : Enemy) -> void:
 
 func collisionWithEnemy(body: Node2D) -> void:
 	if isSoap:
-		body.take_damage(body.strength)
+		body.take_damage(100)
 	else:
 		var toBody = body.position - position
 		body.position = body.position + toBody
-		take_damage(5)
+		take_damage(body.strength)
