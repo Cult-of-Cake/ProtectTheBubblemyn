@@ -6,11 +6,13 @@ enum pathOptions { STAND, WANDER, MOVE_TO_PLAYER }
 var isEnemy : bool = true
 
 @export var enemy_id : String
+@export var current_health : int
 @export var strength : float
 @export var speed : float
 @export var path : pathOptions
 @export var xp_worth : int
-@export var kill_count : int
+
+signal died
 
 var goal_position : Vector2
 func set_goal_point() -> void:
@@ -37,4 +39,10 @@ func _process(delta: float) -> void:
 		move_and_slide()
 
 func take_damage(damage: int) -> void:
+	current_health -= damage
+	if current_health < 0:
+		die()
+	
+func die() -> void:
+	died.emit(enemy_id)
 	queue_free()
