@@ -1,7 +1,7 @@
 extends Sprite2D
 class_name Weapon
 
-enum Types { BUBBLE, BATH_BOMB, BEAM, SCATTER }
+enum Types { BUBBLE, BATH_BOMB, BEAM, SCATTER, ENUM_SIZE }
 
 # The direction in which the weapon shoots
 var orientation: Vector2
