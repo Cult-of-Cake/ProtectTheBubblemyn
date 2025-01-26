@@ -85,7 +85,6 @@ text = "Exit Bubbledex"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 offset_left = 547.0
 offset_top = 284.0
