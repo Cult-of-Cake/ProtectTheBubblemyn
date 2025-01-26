@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwerlytfystbt"]
+[gd_scene load_steps=7 format=3 uid="uid://cwerlytfystbt"]
 
 [ext_resource type="Script" path="res://scenes/bubbledex/bubbledex.gd" id="1_23b7k"]
 [ext_resource type="Script" path="res://scenes/bubbledex/bubbledex_entry.gd" id="2_2c3py"]
 [ext_resource type="Resource" uid="uid://djqa8kv1yih1q" path="res://scenes/bubbledex/entries/greenone.tres" id="3_0qj2e"]
 [ext_resource type="Resource" uid="uid://bvmp0fv147wa3" path="res://scenes/bubbledex/entries/pinkone.tres" id="4_0gkob"]
+[ext_resource type="Resource" uid="uid://dtt2m85rqnb0i" path="res://scenes/bubbledex/entries/salmanillo.tres" id="5_l0it7"]
+[ext_resource type="Resource" uid="uid://je1h2ro77bed" path="res://scenes/bubbledex/entries/bubblemyn.tres" id="6_wjg6i"]
 
 [node name="Bubbledex" type="Control"]
 layout_mode = 3
@@ -17,7 +19,7 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_23b7k")
-entries = Array[ExtResource("2_2c3py")]([ExtResource("3_0qj2e"), ExtResource("4_0gkob")])
+entries = Array[ExtResource("2_2c3py")]([ExtResource("6_wjg6i"), ExtResource("3_0qj2e"), ExtResource("4_0gkob"), ExtResource("5_l0it7")])
 metadata/_edit_lock_ = true
 
 [node name="ItemList" type="VBoxContainer" parent="."]

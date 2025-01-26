@@ -58,5 +58,7 @@ func on_enemy_died(enemy : Enemy) -> void:
 	var id_string = enemy.enemy_id
 	kill_count[id_num] += 1
 	if kill_count[id_num] >= 10:
-		UserSettings.UNLOCKED_BUBBLEDEX_ENTRIES.append(id_string)
+		if not id_string in UserSettings.UNLOCKED_BUBBLEDEX_ENTRIES:
+			UserSettings.UNLOCKED_BUBBLEDEX_ENTRIES.append(id_string)
+			bubbledex.rebuild_bubbledex()
 	player.on_enemy_killed(enemy)
