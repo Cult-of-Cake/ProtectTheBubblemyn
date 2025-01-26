@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dux0ne11n4m7x"]
 
-[ext_resource type="Texture2D" uid="uid://b2fafas8ategg" path="res://graphics/intro/Number_4.png" id="1_frhe1"]
+[ext_resource type="Texture2D" uid="uid://b05bv3me6iluo" path="res://graphics/intro/Number_5.png" id="1_ww6y0"]
 
 [node name="GodotLogo" type="Node2D"]
 
 [node name="TestSlide" type="Sprite2D" parent="."]
-texture = ExtResource("1_frhe1")
+texture = ExtResource("1_ww6y0")
