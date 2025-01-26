@@ -176,7 +176,8 @@ func take_damage(damage):
 var current_xp : int = 0
 func on_enemy_killed(enemy : Enemy) -> void:
 	current_xp += enemy.xp_worth
-	offer_weapon_screen()
+	if [1, 5, 20, 40, 100].has(current_xp):
+		offer_weapon_screen()
 
 func offer_weapon_screen() -> void:
 	# Pause
