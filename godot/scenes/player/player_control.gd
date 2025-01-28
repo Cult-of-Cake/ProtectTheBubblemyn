@@ -179,7 +179,7 @@ func take_damage(damage):
 	HPBar.value = hp
 	
 #region Levelling
-var milestones = [5, 10, 20, 40, 60, 80]
+var milestones = [10, 25, 45, 70, 105, 150]
 var hit = [false, false, false, false, false]
 
 var current_xp : int = 0
